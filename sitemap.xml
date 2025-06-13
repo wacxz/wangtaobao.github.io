@@ -193,14 +193,14 @@
   </url>
   
   <url>
-    <loc>https://101723.xyz/tags/postgres/</loc>
+    <loc>https://101723.xyz/tags/zookeeper/</loc>
     <lastmod>2025-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://101723.xyz/tags/zookeeper/</loc>
+    <loc>https://101723.xyz/tags/postgres/</loc>
     <lastmod>2025-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
