@@ -458,19 +458,19 @@
                 </a>
                 
                 
-                <a href="/tags/zookeeper/" title="zookeeper: 1">
+                <a href="/tags/postgres/" title="postgres: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="zookeeper" style="background-color: #F8C471;">zookeeper
+                            data-tagname="postgres" style="background-color: #F8C471;">postgres
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/postgres/" title="postgres: 1">
+                <a href="/tags/zookeeper/" title="zookeeper: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="postgres" style="background-color: #F9E79F;">postgres
+                            data-tagname="zookeeper" style="background-color: #F9E79F;">zookeeper
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -626,7 +626,7 @@
     
     <div class="container row center-align"
          style="margin-bottom: 15px !important;">
-        <div class="col s12 m8 l8 copy-right">
+        <div class="col s12 copy-right center-align" style="float: none; margin: 0 auto;">
             Copyright&nbsp;&copy; 2021-2025
             
                 <span id="year" hidden>2021-2025</span>
@@ -662,22 +662,16 @@
                         var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
                         var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
                         var diff = t2 - t1;
-                        var diffYears = Math.floor(diff / years);
-                        var diffDays = Math.floor((diff / days) - diffYears * 365);
-                        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
-                            minutes);
-                        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                            diffMinutes * minutes) / seconds);
-                        if (startYear == todayYear) {
-                            document.getElementById("year").innerHTML = todayYear;
-                            document.getElementById("sitetime").innerHTML = "本站已持续不稳定运行 " + diffDays + " 天 " + diffHours +
-                                " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                        } else {
-                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                            document.getElementById("sitetime").innerHTML = "本站已持续不稳定运行 " + diffYears + " 年 " + diffDays +
-                                " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                        }
+                        var totalSeconds = Math.floor(diff / 1000);
+
+                        document.getElementById("sitetime").innerHTML = "本站已持续不稳定运行 " + totalSeconds + " 秒";
+                        // if (startYear == todayYear) {
+                        //     document.getElementById("year").innerHTML = todayYear;
+                        //     document.getElementById("sitetime").innerHTML = "本站已持续不稳定运行 " + totalSeconds + " 秒";
+                        // } else {
+                        //     document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        //     document.getElementById("sitetime").innerHTML = "本站已持续不稳定运行 " + totalSeconds + " 秒";
+                        // }
                     }
 
                     setInterval(siteTime, 1000);
@@ -707,7 +701,7 @@
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+<!--        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/wanghubcc" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -734,7 +728,7 @@
         <i class="fas fa-rss"></i>
     </a>
 
-</div>
+</div>-->
     </div>
 </footer>
 
