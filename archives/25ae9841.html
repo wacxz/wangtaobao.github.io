@@ -444,38 +444,38 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="docker安装mysql"><a href="#docker安装mysql" class="headerlink" title="docker安装mysql"></a>docker安装mysql</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#拉取镜像
+                <h1 id="docker安装mysql"><a href="#docker安装mysql" class="headerlink" title="docker安装mysql"></a>docker安装mysql</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment">#拉取镜像</span>
 docker pull mysql:5.7
 
-# --name指定容器名字 -v目录挂载 -p指定端口映射  -e设置mysql参数 -d后台运行 -m限制内存使用
-docker run -p 3306:3306 --name mysql \
--v /mydata/mysql/log:/var/log/mysql \
--v /mydata/mysql/data:/var/lib/mysql \
--v /mydata/mysql/conf:/etc/mysql \
--m 200m \
--e MYSQL_ROOT_PASSWORD=123456 \
+<span class="token comment"># --name指定容器名字 -v目录挂载 -p指定端口映射  -e设置mysql参数 -d后台运行 -m限制内存使用</span>
+docker run -p <span class="token number">3306</span>:3306 --name mysql <span class="token punctuation">\</span>
+-v /mydata/mysql/log:/var/log/mysql <span class="token punctuation">\</span>
+-v /mydata/mysql/data:/var/lib/mysql <span class="token punctuation">\</span>
+-v /mydata/mysql/conf:/etc/mysql <span class="token punctuation">\</span>
+-m 200m <span class="token punctuation">\</span>
+-e <span class="token assign-left variable">MYSQL_ROOT_PASSWORD</span><span class="token operator">=</span><span class="token number">123456</span> <span class="token punctuation">\</span>
 -d mysql:5.7
 
-#修改配置文件
-vi /mydata/mysql/conf/my.conf 
+<span class="token comment">#修改配置文件</span>
+<span class="token function">vi</span> /mydata/mysql/conf/my.conf 
 
-[client]
-default-character-set=utf8
-[mysql]
-default-character-set=utf8
-[mysqld]
-init_connect='SET collation_connection = utf8_unicode_ci'
-init_connect='SET NAMES utf8'
-character-set-server=utf8
-collation-server=utf8_unicode_ci
+<span class="token punctuation">[</span>client<span class="token punctuation">]</span>
+default-character-set<span class="token operator">=</span>utf8
+<span class="token punctuation">[</span>mysql<span class="token punctuation">]</span>
+default-character-set<span class="token operator">=</span>utf8
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+<span class="token assign-left variable">init_connect</span><span class="token operator">=</span><span class="token string">'SET collation_connection = utf8_unicode_ci'</span>
+<span class="token assign-left variable">init_connect</span><span class="token operator">=</span><span class="token string">'SET NAMES utf8'</span>
+character-set-server<span class="token operator">=</span>utf8
+collation-server<span class="token operator">=</span>utf8_unicode_ci
 skip-character-set-client-handshake
 skip-name-resolve
 
-#重启服务
+<span class="token comment">#重启服务</span>
 docker restart mysql
 
-#设置容器开机自启
-docker update mysql --restart=always<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">#设置容器开机自启</span>
+docker update mysql --restart<span class="token operator">=</span>always<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -816,7 +816,7 @@ docker update mysql --restart=always<span aria-hidden="true" class="line-numbers
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">3.3k</span>&nbsp;字
+                        class="white-color">4.7k</span>&nbsp;字
             
             
             

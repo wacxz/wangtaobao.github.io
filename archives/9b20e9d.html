@@ -444,17 +444,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="docker安装zookeeper"><a href="#docker安装zookeeper" class="headerlink" title="docker安装zookeeper"></a>docker安装zookeeper</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#拉取镜像
+                <h1 id="docker安装zookeeper"><a href="#docker安装zookeeper" class="headerlink" title="docker安装zookeeper"></a>docker安装zookeeper</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment">#拉取镜像</span>
 docker pull zookeeper
 
-#创建挂载文件夹
-mkdir -p /opt/zook
+<span class="token comment">#创建挂载文件夹</span>
+<span class="token function">mkdir</span> -p /opt/zook
 
-#启动容器
-docker run -d -v /opt/zook:/data -v /opt/zook:/datalog  -e ZOO_MY_ID=1 -e ZOO_SERVERS='server.1=172.110.110.101:2888:3888'  --net=host --name zookeeper --privileged zookeeper
+<span class="token comment">#启动容器</span>
+docker run -d -v /opt/zook:/data -v /opt/zook:/datalog  -e <span class="token assign-left variable">ZOO_MY_ID</span><span class="token operator">=</span><span class="token number">1</span> -e <span class="token assign-left variable">ZOO_SERVERS</span><span class="token operator">=</span><span class="token string">'server.1=172.110.110.101:2888:3888'</span>  --net<span class="token operator">=</span>host --name zookeeper --privileged zookeeper
 
-#设置容器开机自启
-docker update zookeeper --restart=always<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">#设置容器开机自启</span>
+docker update zookeeper --restart<span class="token operator">=</span>always<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -799,7 +799,7 @@ docker update zookeeper --restart=always<span aria-hidden="true" class="line-num
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">3.3k</span>&nbsp;字
+                        class="white-color">4.7k</span>&nbsp;字
             
             
             

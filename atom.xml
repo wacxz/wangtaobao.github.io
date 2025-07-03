@@ -6,7 +6,7 @@
   <link href="https://101723.xyz/atom.xml" rel="self"/>
   
   <link href="https://101723.xyz/"/>
-  <updated>2021-08-18T10:25:40.000Z</updated>
+  <updated>2025-07-03T09:03:31.268Z</updated>
   <id>https://101723.xyz/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>制作 ky10.aarch64 离线yum源</title>
+    <link href="https://101723.xyz/archives/d812484c.html"/>
+    <id>https://101723.xyz/archives/d812484c.html</id>
+    <published>2025-07-03T09:02:56.000Z</published>
+    <updated>2025-07-03T09:03:31.268Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;制作-ky10-aarch64-离线yum源&quot;&gt;&lt;a href=&quot;#制作-ky10-aarch64-离线yum源&quot; class=&quot;headerlink&quot; title=&quot;制作 ky10.aarch64 离线yum源&quot;&gt;&lt;/a&gt;制作 ky10.aarch64</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>centos做代理中转</title>

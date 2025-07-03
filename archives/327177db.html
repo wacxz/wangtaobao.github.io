@@ -440,44 +440,44 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="centos7安装docker"><a href="#centos7安装docker" class="headerlink" title="centos7安装docker"></a>centos7安装docker</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#卸载系统之前的docker 
-sudo yum remove docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
+                <h1 id="centos7安装docker"><a href="#centos7安装docker" class="headerlink" title="centos7安装docker"></a>centos7安装docker</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment">#卸载系统之前的docker </span>
+<span class="token function">sudo</span> yum remove docker <span class="token punctuation">\</span>
+                  docker-client <span class="token punctuation">\</span>
+                  docker-client-latest <span class="token punctuation">\</span>
+                  docker-common <span class="token punctuation">\</span>
+                  docker-latest <span class="token punctuation">\</span>
+                  docker-latest-logrotate <span class="token punctuation">\</span>
+                  docker-logrotate <span class="token punctuation">\</span>
                   docker-engine
                   
-sudo yum install -y yum-utils
+<span class="token function">sudo</span> yum <span class="token function">install</span> -y yum-utils
 
-# 配置镜像
-sudo yum-config-manager \
-    --add-repo \
+<span class="token comment"># 配置镜像</span>
+<span class="token function">sudo</span> yum-config-manager <span class="token punctuation">\</span>
+    --add-repo <span class="token punctuation">\</span>
     https://download.docker.com/linux/centos/docker-ce.repo
 
-#安装docker    
-sudo yum install docker-ce docker-ce-cli containerd.io
+<span class="token comment">#安装docker    </span>
+<span class="token function">sudo</span> yum <span class="token function">install</span> docker-ce docker-ce-cli containerd.io
 
-#启动docker服务
-sudo systemctl start docker 
+<span class="token comment">#启动docker服务</span>
+<span class="token function">sudo</span> systemctl start docker 
 
-#查看版本，是否安装成功
+<span class="token comment">#查看版本，是否安装成功</span>
 docker -v
 
-#配置镜像加速
-sudo mkdir -p /etc/docker
+<span class="token comment">#配置镜像加速</span>
+<span class="token function">sudo</span> <span class="token function">mkdir</span> -p /etc/docker
 
-sudo tee /etc/docker/daemon.json &lt;&lt;-'EOF'
+<span class="token function">sudo</span> <span class="token function">tee</span> /etc/docker/daemon.json <span class="token operator">&lt;&lt;-</span><span class="token string">'EOF'
 {
   "registry-mirrors": ["https://g2i6jdnj.mirror.aliyuncs.com"]
 }
-EOF
+EOF</span>
 
-#重启服务
-sudo systemctl daemon-reload
-sudo systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">#重启服务</span>
+<span class="token function">sudo</span> systemctl daemon-reload
+<span class="token function">sudo</span> systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -818,7 +818,7 @@ sudo systemctl restart docker<span aria-hidden="true" class="line-numbers-rows">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">3.3k</span>&nbsp;字
+                        class="white-color">4.7k</span>&nbsp;字
             
             
             

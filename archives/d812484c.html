@@ -1,0 +1,1080 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="制作 ky10.aarch64 离线yum源, Java、Python">
+    <meta name="description" content="年轻时的一腔热血，最终都会被生活磨平棱角，归于平凡">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>制作 ky10.aarch64 离线yum源 | 莫问天涯</title>
+    <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/14/3acb9402c3f8690f664e118814790c.jpg">
+<!--    <link rel="icon" type="image/jpeg" href="">-->
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="莫问天涯" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">莫问天涯</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">莫问天涯</div>
+        <div class="logo-desc">
+            
+            年轻时的一腔热血，最终都会被生活磨平棱角，归于平凡
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">制作 ky10.aarch64 离线yum源</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m10 offset-m1 l10 offset-l1 center-align">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-07-03
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2025-07-03
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="制作-ky10-aarch64-离线yum源"><a href="#制作-ky10-aarch64-离线yum源" class="headerlink" title="制作 ky10.aarch64 离线yum源"></a>制作 ky10.aarch64 离线yum源</h1><h3 id="找一台可以联网的机器缓存需要的包文件"><a href="#找一台可以联网的机器缓存需要的包文件" class="headerlink" title="找一台可以联网的机器缓存需要的包文件"></a>找一台可以联网的机器缓存需要的包文件</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yumdownloader --resolve  --destdir<span class="token operator">=</span>./ <span class="token function">lsof</span> <span class="token function">tar</span> <span class="token function">zip</span> <span class="token function">unzip</span> jq sshpass chrony psmisc <span class="token function">vim</span> <span class="token function">curl</span> <span class="token function">wget</span> docker openssh-clients python2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="下载元数据工具"><a href="#下载元数据工具" class="headerlink" title="下载元数据工具"></a>下载元数据工具</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> createrepo -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="创建元数据"><a href="#创建元数据" class="headerlink" title="创建元数据"></a>创建元数据</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">createrepo -o <span class="token builtin class-name">.</span> -v <span class="token builtin class-name">.</span>
+
+
+<span class="token punctuation">[</span>root@localhost Packages<span class="token punctuation">]</span><span class="token comment"># ll</span>
+total <span class="token number">132796</span>
+-rw-r--r-- <span class="token number">1</span> root root   <span class="token number">165316</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 chrony-3.5-3.p01.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root <span class="token number">26121348</span> Nov <span class="token number">20</span>  <span class="token number">2023</span> containerd.io-1.6.18-3.1.el8.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">37296</span> Nov <span class="token number">20</span>  <span class="token number">2023</span> container-selinux-2.138.0-1.p01.ky10.noarch.rpm
+-rw-r--r-- <span class="token number">1</span> root root   <span class="token number">133676</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 curl-7.71.1-35.p02.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root <span class="token number">10995344</span> Nov <span class="token number">20</span>  <span class="token number">2023</span> docker-buildx-plugin-0.10.2-1.el8.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root <span class="token number">17258584</span> Nov <span class="token number">20</span>  <span class="token number">2023</span> docker-ce-19.03.15-3.el8.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root  <span class="token number">6541208</span> Nov <span class="token number">20</span>  <span class="token number">2023</span> docker-ce-cli-23.0.1-1.el8.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root  <span class="token number">9811892</span> Nov <span class="token number">20</span>  <span class="token number">2023</span> docker-compose-plugin-2.16.0-1.el8.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">97944</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 dwz-0.13-1.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">21336</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 efi-srpm-macros-4-4.p01.ky10.noarch.rpm
+-rw-r--r-- <span class="token number">1</span> root root  <span class="token number">3145392</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 glibc-2.28-88.p18.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root <span class="token number">27426844</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 glibc-common-2.28-88.p18.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root  <span class="token number">2687936</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 glibc-devel-2.28-88.p18.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">18272</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 gpm-libs-1.20.7-23.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">72020</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 iptables-1.8.5-2.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">87600</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 iptables-help-1.8.5-2.ky10.noarch.rpm
+-rw-r--r-- <span class="token number">1</span> root root   <span class="token number">114784</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 jq-1.5-18.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">37132</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 jq-help-1.5-18.ky10.noarch.rpm
+-rw-r--r-- <span class="token number">1</span> root root  <span class="token number">1638472</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 kernel-headers-4.19.90-52.48.v2207.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">51816</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 kylin-rpm-config-30-18.p07.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">20232</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 libattr-devel-2.4.48-15.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root   <span class="token number">100456</span> Nov <span class="token number">20</span>  <span class="token number">2023</span> libcgroup-0.42.2-1.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root   <span class="token number">100084</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 libcgroup-0.42.2-1.p03.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root   <span class="token number">253444</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 libcurl-7.71.1-35.p02.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">30012</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 libkysec-devel-3.3.6-33.se.12.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">13884</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 libsecurity1-devel-1.1-17.se.05.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">32984</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 libtool-ltdl-2.4.6-33.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root   <span class="token number">114812</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 libxcrypt-devel-4.4.16-2.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">89220</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 lsof-4.93.2-5.p01.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root   <span class="token number">252708</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 openssh-8.2p1-16.p18.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root   <span class="token number">464228</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 openssh-clients-8.2p1-16.p18.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root   <span class="token number">335572</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 openssh-server-8.2p1-16.p18.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root   <span class="token number">149936</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 psmisc-23.3-2.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root  <span class="token number">6791388</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 python2-2.7.18-1.se.05.p03.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root  <span class="token number">1926084</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 python2-debug-2.7.18-1.se.05.p03.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root  <span class="token number">5153252</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 python2-devel-2.7.18-1.se.05.p03.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">13536</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 python2-help-2.7.18-1.se.05.p03.ky10.noarch.rpm
+-rw-r--r-- <span class="token number">1</span> root root   <span class="token number">527052</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 python2-setuptools-44.1.1-3.p01.ky10.noarch.rpm
+-rw-r--r-- <span class="token number">1</span> root root   <span class="token number">344092</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 python2-tkinter-2.7.18-1.se.05.p03.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">14500</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 python2-tools-2.7.18-1.se.05.p03.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">22692</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 python3-rpm-generators-9-1.ky10.noarch.rpm
+-rw-r--r-- <span class="token number">1</span> root root     <span class="token number">7968</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 qt5-srpm-macros-5.14.2-1.ky10.noarch.rpm
+drwxr-xr-x <span class="token number">2</span> root root     <span class="token number">4096</span> Jun <span class="token number">30</span> <span class="token number">10</span>:32 repodata
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">25288</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 sshpass-1.06-8.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root   <span class="token number">787480</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 tar-1.32-4.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root  <span class="token number">1111544</span> Jun <span class="token number">30</span> <span class="token number">10</span>:31 tk-8.6.10-2.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root   <span class="token number">138796</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 unzip-6.0-47.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root  <span class="token number">8021212</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 vim-common-9.0-19.p09.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root  <span class="token number">1656496</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 vim-enhanced-9.0-19.p09.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root    <span class="token number">23256</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 vim-filesystem-9.0-19.p09.ky10.noarch.rpm
+-rw-r--r-- <span class="token number">1</span> root root   <span class="token number">648108</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 wget-1.20.3-6.ky10.aarch64.rpm
+-rw-r--r-- <span class="token number">1</span> root root   <span class="token number">225892</span> Jun <span class="token number">23</span> <span class="token number">14</span>:22 zip-3.0-26.p01.ky10.aarch64.rpm
+<span class="token punctuation">[</span>root@localhost Packages<span class="token punctuation">]</span><span class="token comment"># </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="下载-miniserve-作为文件服务器，做yum源服务"><a href="#下载-miniserve-作为文件服务器，做yum源服务" class="headerlink" title="下载 miniserve 作为文件服务器，做yum源服务"></a>下载 <code>miniserve</code> 作为文件服务器，做yum源服务</h3><p><a target="_blank" rel="noopener" href="https://github.com/svenstaro/miniserve/releases">miniserve</a></p>
+<h3 id="配置-service"><a href="#配置-service" class="headerlink" title="配置 service"></a>配置 <code>service</code></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> <span class="token operator">&gt;</span> /etc/systemd/system/yum_repo.service <span class="token operator">&lt;&lt;</span> <span class="token string">'EOF'
+[Unit]
+Description=yum_repo
+After=network.target
+
+[Service]
+Environment="RUST_LOG=info"
+Type=simple
+User=root
+ExecStart=/usr/local/bin/miniserve /dubhe/yum/yum.repo -v -F --hide-theme-selector --route-prefix /base -p 18080
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
+EOF</span>
+
+
+systemctl <span class="token builtin class-name">enable</span> --now yum_repo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> <span class="token operator">&gt;</span> /etc/yum.repos.d/dubhe.repo <span class="token operator">&lt;&lt;</span> <span class="token string">'EOF'
+[dubhe]
+name=dubhe
+baseurl = http://10.193.34.4:18080/base/$basearch/Packages/
+enabled=1
+gpgcheck=0
+EOF</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost deploy<span class="token punctuation">]</span><span class="token comment"># yum  clean all</span>
+<span class="token number">0</span> files removed
+<span class="token punctuation">[</span>root@localhost deploy<span class="token punctuation">]</span><span class="token comment"># yum install vim</span>
+dubhe                                                                                                                                                                                                       <span class="token number">21</span> MB/s <span class="token operator">|</span>  <span class="token number">66</span> kB     00:00    
+Dependencies resolved.
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+ Package                                                     Architecture                                         Version                                                         Repository                                          Size
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+Installing:
+ vim-enhanced                                                aarch64                                              <span class="token number">2</span>:9.0-19.p09.ky10                                               dubhe                                              <span class="token number">1.6</span> M
+Installing dependencies:
+ gpm-libs                                                    aarch64                                              <span class="token number">1.20</span>.7-23.ky10                                                  dubhe                                               <span class="token number">18</span> k
+ vim-common                                                  aarch64                                              <span class="token number">2</span>:9.0-19.p09.ky10                                               dubhe                                              <span class="token number">7.6</span> M
+ vim-filesystem                                              noarch                                               <span class="token number">2</span>:9.0-19.p09.ky10                                               dubhe                                               <span class="token number">23</span> k
+
+Transaction Summary
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+Install  <span class="token number">4</span> Packages
+
+Total download size: <span class="token number">9.3</span> M
+Installed size: <span class="token number">38</span> M
+Is this ok <span class="token punctuation">[</span>y/N<span class="token punctuation">]</span>: 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+<!--            <div class="tag_share" style="display: block;">-->
+<!--                <div class="post-meta__tag-list" style="display: inline-block;">-->
+<!--                    -->
+<!--                        <div class="article-tag">-->
+<!--                            <span class="chip bg-color">无标签</span>-->
+<!--                        </div>-->
+<!--                    -->
+<!--                </div>-->
+<!--                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">-->
+<!--                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+-->
+<!--                </div>-->
+<!--            </div>-->
+            
+        </div>
+    </div>
+
+    
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<!--<div class="card gitalk-card" data-aos="fade-up">-->
+<!--    <div class="comment_headling"-->
+<!--         style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">-->
+<!--        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>-->
+<!--        <span>评论</span>-->
+<!--    </div>-->
+<!--    <div id="utteranc-container" class="card-content"></div>-->
+<!--</div>-->
+
+<!--<script type="text/javascript">-->
+<!--    (function () {-->
+<!--        // 匿名函数，防止污染全局变量-->
+<!--        var utterances = document.createElement('script');-->
+<!--        utterances.type = 'text/javascript';-->
+<!--        utterances.async = true;-->
+<!--        utterances.setAttribute('issue-term', 'pathname')-->
+<!--        utterances.setAttribute('theme', 'github-light')-->
+<!--        utterances.setAttribute('repo', 'wangzq98/utterances')-->
+<!--        utterances.crossorigin = 'anonymous';-->
+<!--        utterances.src = 'https://utteranc.es/client.js';-->
+<!--        // content 是要插入评论的地方-->
+<!--        document.getElementById('utteranc-container').appendChild(utterances);-->
+<!--    })();-->
+<!--</script>-->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/archives/d812484c.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/19.jpg" class="responsive-img" alt="制作 ky10.aarch64 离线yum源">
+                        
+                        <span class="card-title">制作 ky10.aarch64 离线yum源</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-07-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            莫问天涯
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/archives/f8ebd115.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/0.jpg" class="responsive-img" alt="centos做代理中转">
+                        
+                        <span class="card-title">centos做代理中转</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            莫问天涯
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BB%A3%E7%90%86/">
+                        <span class="chip bg-color">代理</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91/">
+                        <span class="chip bg-color">代理转发</span>
+                    </a>
+                    
+                    <a href="/tags/centos/">
+                        <span class="chip bg-color">centos</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+<!--    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">-->
+<!--        <div class="toc-widget card" style="background-color: white;">-->
+<!--            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>-->
+<!--            <div id="toc-content"></div>-->
+<!--        </div>-->
+<!--    </div>-->
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 copy-right center-align" style="float: none; margin: 0 auto;">
+            Copyright&nbsp;&copy; 2021-2025
+            
+                <span id="year" hidden>2021-2025</span>
+            
+            <span id="year" hidden>2021</span>
+            <a href="/about" target="_blank">莫问天涯</a>
+<!--            <a href="https://beian.miit.gov.cn" target="_blank">鲁ICP备2021031793号-1</a>-->
+            <!--            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>-->
+            <!--            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>-->
+            <br>
+            
+                <span id="sitetime">载入运行时间...</span>
+                <script>
+                    function siteTime() {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2021";
+                        var startMonth = "8";
+                        var startDate = "1";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var totalSeconds = Math.floor(diff / 1000);
+
+                        document.getElementById("sitetime").innerHTML = "本站已持续不稳定运行 " + totalSeconds + " 秒";
+                        // if (startYear == todayYear) {
+                        //     document.getElementById("year").innerHTML = todayYear;
+                        //     document.getElementById("sitetime").innerHTML = "本站已持续不稳定运行 " + totalSeconds + " 秒";
+                        // } else {
+                        //     document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        //     document.getElementById("sitetime").innerHTML = "本站已持续不稳定运行 " + totalSeconds + " 秒";
+                        // }
+                    }
+
+                    setInterval(siteTime, 1000);
+                </script>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">4.7k</span>&nbsp;字
+            
+            
+            
+                
+            
+            
+<!--                <span id="busuanzi_container_site_pv">-->
+<!--                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"-->
+<!--                                                                        class="white-color"></span>&nbsp;次-->
+<!--            </span>-->
+            
+            
+<!--                <span id="busuanzi_container_site_uv">-->
+<!--                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"-->
+<!--                                                                           class="white-color"></span>&nbsp;人-->
+<!--            </span>-->
+            
+            <br>
+            
+        </div>
+<!--        <div class="col s12 m4 l4 social-link social-statis">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>-->
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 3,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+
+</html>
