@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+  <title>
+    
+    docker安装mysql 丨
+    
+
+    莫问天涯
+  </title>
+
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+  <link id="theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.css">
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+  
+
+  <!-- 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/root.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/post.css">
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="莫问天涯" type="application/atom+xml">
+</head>
+
+<body>
+  <header class="header">
+  <section class="header-container">
+    <a class="logo" href="/">莫问天涯</a>
+    <ul class="nav">
+      
+      <li><a href="/about">about</a></li>
+      
+    </ul>
+  </section>
+</header>
+  <main class="main">
+    <article class="post">
+  
+  <div class="post-title">docker安装mysql</div>
+  <div class="post-meta">
+    <div class="date">2021 八月 16日</div>
+    <div class="tags">
+      
+      <div class="tag-item">笔记</div>
+      
+      <div class="tag-item">docker</div>
+      
+      <div class="tag-item">mysql</div>
+      
+    </div>
+  </div>
+  
+
+  <main class="post-content"><h1 id="docker安装mysql"><a href="#docker安装mysql" class="headerlink" title="docker安装mysql"></a>docker安装mysql</h1><pre><code class="highlight shell"><span class="meta prompt_">#</span><span class="language-bash">拉取镜像</span>
+docker pull mysql:5.7
+<span class="meta prompt_"></span>
+<span class="meta prompt_"># </span><span class="language-bash">--name指定容器名字 -v目录挂载 -p指定端口映射  -e设置mysql参数 -d后台运行 -m限制内存使用</span>
+docker run -p 3306:3306 --name mysql \
+-v /mydata/mysql/log:/var/log/mysql \
+-v /mydata/mysql/data:/var/lib/mysql \
+-v /mydata/mysql/conf:/etc/mysql \
+-m 200m \
+-e MYSQL_ROOT_PASSWORD=123456 \
+-d mysql:5.7
+<span class="meta prompt_"></span>
+<span class="meta prompt_">#</span><span class="language-bash">修改配置文件</span>
+vi /mydata/mysql/conf/my.conf 
+
+[client]
+default-character-set=utf8
+[mysql]
+default-character-set=utf8
+[mysqld]
+init_connect=&#x27;SET collation_connection = utf8_unicode_ci&#x27;
+init_connect=&#x27;SET NAMES utf8&#x27;
+character-set-server=utf8
+collation-server=utf8_unicode_ci
+skip-character-set-client-handshake
+skip-name-resolve
+<span class="meta prompt_"></span>
+<span class="meta prompt_">#</span><span class="language-bash">重启服务</span>
+docker restart mysql
+<span class="meta prompt_"></span>
+<span class="meta prompt_">#</span><span class="language-bash">设置容器开机自启</span>
+docker update mysql --restart=always</code></pre></main>
+
+</article>
+
+
+<script src="/js/highlight.js"></script>
+
+  </main>
+  <footer class="footer">
+  
+  <span>Copyright © 2025 莫问天涯</span>
+  
+</footer>
+  
+<script src="/js/theme.js"></script>
+
+</body>
+
+</html>

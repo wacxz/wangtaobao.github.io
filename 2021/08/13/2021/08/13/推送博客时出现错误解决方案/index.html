@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+  <title>
+    
+    推送博客时出现错误解决方案 丨
+    
+
+    莫问天涯
+  </title>
+
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+  <link id="theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.css">
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+  
+
+  <!-- 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/root.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/post.css">
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="莫问天涯" type="application/atom+xml">
+</head>
+
+<body>
+  <header class="header">
+  <section class="header-container">
+    <a class="logo" href="/">莫问天涯</a>
+    <ul class="nav">
+      
+      <li><a href="/about">about</a></li>
+      
+    </ul>
+  </section>
+</header>
+  <main class="main">
+    <article class="post">
+  
+  <div class="post-title">推送博客时出现错误解决方案</div>
+  <div class="post-meta">
+    <div class="date">2021 八月 13日</div>
+    <div class="tags">
+      
+      <div class="tag-item">笔记</div>
+      
+      <div class="tag-item">解决方案</div>
+      
+    </div>
+  </div>
+  
+
+  <main class="post-content"><h3 id="Failed-to-connect-to-github-com-port-443-Timed-out"><a href="#Failed-to-connect-to-github-com-port-443-Timed-out" class="headerlink" title="Failed to connect to github.com port 443: Timed out"></a>Failed to connect to github.com port 443: Timed out</h3><h5 id="在推送博客时出现错误如下：Failed-to-connect-to-github-com-port-443-Timed-out"><a href="#在推送博客时出现错误如下：Failed-to-connect-to-github-com-port-443-Timed-out" class="headerlink" title="在推送博客时出现错误如下：Failed to connect to github.com port 443: Timed out"></a>在推送博客时出现错误如下：Failed to connect to github.com port 443: Timed out</h5><pre><code class="highlight shell">Failed to connect to github.com port 443: Timed out</code></pre>
+
+<p>解决办法，执行如下命令（一般是挂代理引起的）</p>
+<pre><code class="highlight shell">git config --global --unset http.proxy</code></pre>
+
+<p>再次推送</p>
+<h3 id="OpenSSL-SSL-read-Connection-was-reset-errno-10054"><a href="#OpenSSL-SSL-read-Connection-was-reset-errno-10054" class="headerlink" title="OpenSSL SSL_read: Connection was reset, errno 10054"></a>OpenSSL SSL_read: Connection was reset, errno 10054</h3><h5 id="出现错误：OpenSSL-SSL-read-Connection-was-reset-errno-10054"><a href="#出现错误：OpenSSL-SSL-read-Connection-was-reset-errno-10054" class="headerlink" title="出现错误：OpenSSL SSL_read: Connection was reset, errno 10054"></a>出现错误：OpenSSL SSL_read: Connection was reset, errno 10054</h5><pre><code class="highlight shell">OpenSSL SSL_read: Connection was reset, errno 10054</code></pre>
+
+<p>执行命令，解除ssl验证（每次出现错误都需要重新执行）</p>
+<pre><code class="highlight shell">git config --global http.sslVerify &quot;false&quot;</code></pre>
+
+<p>再次推送</p>
+<h3 id="The-requested-URL-returned-error-403"><a href="#The-requested-URL-returned-error-403" class="headerlink" title="The requested URL returned error: 403"></a>The requested URL returned error: 403</h3><pre><code class="highlight html">解决办法: 
+
+控制面板 -- &gt;  window 凭据 删除之前的就好了,再次上传时就会提示需要输入当前仓库的账号和密码</code></pre></main>
+
+</article>
+
+
+<script src="/js/highlight.js"></script>
+
+  </main>
+  <footer class="footer">
+  
+  <span>Copyright © 2025 莫问天涯</span>
+  
+</footer>
+  
+<script src="/js/theme.js"></script>
+
+</body>
+
+</html>

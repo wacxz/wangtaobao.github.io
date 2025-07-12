@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+  <title>
+    
+    制作 ky10.aarch64 离线yum源 丨
+    
+
+    莫问天涯
+  </title>
+
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+  <link id="theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.css">
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+  
+
+  <!-- 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/root.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/post.css">
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="莫问天涯" type="application/atom+xml">
+</head>
+
+<body>
+  <header class="header">
+  <section class="header-container">
+    <a class="logo" href="/">莫问天涯</a>
+    <ul class="nav">
+      
+      <li><a href="/about">about</a></li>
+      
+    </ul>
+  </section>
+</header>
+  <main class="main">
+    <article class="post">
+  
+  <div class="post-title">制作 ky10.aarch64 离线yum源</div>
+  <div class="post-meta">
+    <div class="date">2025 七月 3日</div>
+    <div class="tags">
+      
+    </div>
+  </div>
+  
+
+  <main class="post-content"><h1 id="制作-ky10-aarch64-离线yum源"><a href="#制作-ky10-aarch64-离线yum源" class="headerlink" title="制作 ky10.aarch64 离线yum源"></a>制作 ky10.aarch64 离线yum源</h1><h3 id="找一台可以联网的机器缓存需要的包文件"><a href="#找一台可以联网的机器缓存需要的包文件" class="headerlink" title="找一台可以联网的机器缓存需要的包文件"></a>找一台可以联网的机器缓存需要的包文件</h3><pre><code class="highlight bash">yumdownloader --resolve  --destdir=./ lsof tar zip unzip jq sshpass chrony psmisc vim curl wget docker openssh-clients python2</code></pre>
+
+<h3 id="下载元数据工具"><a href="#下载元数据工具" class="headerlink" title="下载元数据工具"></a>下载元数据工具</h3><pre><code class="highlight bash">yum install createrepo -y</code></pre>
+
+<h3 id="创建元数据"><a href="#创建元数据" class="headerlink" title="创建元数据"></a>创建元数据</h3><pre><code class="highlight bash">createrepo -o . -v .
+
+
+[root@localhost Packages]# ll
+total 132796
+-rw-r--r-- 1 root root   165316 Jun 23 14:22 chrony-3.5-3.p01.ky10.aarch64.rpm
+-rw-r--r-- 1 root root 26121348 Nov 20  2023 containerd.io-1.6.18-3.1.el8.aarch64.rpm
+-rw-r--r-- 1 root root    37296 Nov 20  2023 container-selinux-2.138.0-1.p01.ky10.noarch.rpm
+-rw-r--r-- 1 root root   133676 Jun 23 14:22 curl-7.71.1-35.p02.ky10.aarch64.rpm
+-rw-r--r-- 1 root root 10995344 Nov 20  2023 docker-buildx-plugin-0.10.2-1.el8.aarch64.rpm
+-rw-r--r-- 1 root root 17258584 Nov 20  2023 docker-ce-19.03.15-3.el8.aarch64.rpm
+-rw-r--r-- 1 root root  6541208 Nov 20  2023 docker-ce-cli-23.0.1-1.el8.aarch64.rpm
+-rw-r--r-- 1 root root  9811892 Nov 20  2023 docker-compose-plugin-2.16.0-1.el8.aarch64.rpm
+-rw-r--r-- 1 root root    97944 Jun 30 10:31 dwz-0.13-1.ky10.aarch64.rpm
+-rw-r--r-- 1 root root    21336 Jun 30 10:31 efi-srpm-macros-4-4.p01.ky10.noarch.rpm
+-rw-r--r-- 1 root root  3145392 Jun 30 10:31 glibc-2.28-88.p18.ky10.aarch64.rpm
+-rw-r--r-- 1 root root 27426844 Jun 30 10:31 glibc-common-2.28-88.p18.ky10.aarch64.rpm
+-rw-r--r-- 1 root root  2687936 Jun 30 10:31 glibc-devel-2.28-88.p18.ky10.aarch64.rpm
+-rw-r--r-- 1 root root    18272 Jun 23 14:22 gpm-libs-1.20.7-23.ky10.aarch64.rpm
+-rw-r--r-- 1 root root    72020 Jun 23 14:22 iptables-1.8.5-2.ky10.aarch64.rpm
+-rw-r--r-- 1 root root    87600 Jun 23 14:22 iptables-help-1.8.5-2.ky10.noarch.rpm
+-rw-r--r-- 1 root root   114784 Jun 23 14:22 jq-1.5-18.ky10.aarch64.rpm
+-rw-r--r-- 1 root root    37132 Jun 23 14:22 jq-help-1.5-18.ky10.noarch.rpm
+-rw-r--r-- 1 root root  1638472 Jun 30 10:31 kernel-headers-4.19.90-52.48.v2207.ky10.aarch64.rpm
+-rw-r--r-- 1 root root    51816 Jun 30 10:31 kylin-rpm-config-30-18.p07.ky10.aarch64.rpm
+-rw-r--r-- 1 root root    20232 Jun 30 10:31 libattr-devel-2.4.48-15.ky10.aarch64.rpm
+-rw-r--r-- 1 root root   100456 Nov 20  2023 libcgroup-0.42.2-1.ky10.aarch64.rpm
+-rw-r--r-- 1 root root   100084 Jun 23 14:22 libcgroup-0.42.2-1.p03.ky10.aarch64.rpm
+-rw-r--r-- 1 root root   253444 Jun 23 14:22 libcurl-7.71.1-35.p02.ky10.aarch64.rpm
+-rw-r--r-- 1 root root    30012 Jun 30 10:31 libkysec-devel-3.3.6-33.se.12.ky10.aarch64.rpm
+-rw-r--r-- 1 root root    13884 Jun 30 10:31 libsecurity1-devel-1.1-17.se.05.ky10.aarch64.rpm
+-rw-r--r-- 1 root root    32984 Jun 23 14:22 libtool-ltdl-2.4.6-33.ky10.aarch64.rpm
+-rw-r--r-- 1 root root   114812 Jun 30 10:31 libxcrypt-devel-4.4.16-2.ky10.aarch64.rpm
+-rw-r--r-- 1 root root    89220 Jun 23 14:22 lsof-4.93.2-5.p01.ky10.aarch64.rpm
+-rw-r--r-- 1 root root   252708 Jun 23 14:22 openssh-8.2p1-16.p18.ky10.aarch64.rpm
+-rw-r--r-- 1 root root   464228 Jun 23 14:22 openssh-clients-8.2p1-16.p18.ky10.aarch64.rpm
+-rw-r--r-- 1 root root   335572 Jun 23 14:22 openssh-server-8.2p1-16.p18.ky10.aarch64.rpm
+-rw-r--r-- 1 root root   149936 Jun 23 14:22 psmisc-23.3-2.ky10.aarch64.rpm
+-rw-r--r-- 1 root root  6791388 Jun 30 10:31 python2-2.7.18-1.se.05.p03.ky10.aarch64.rpm
+-rw-r--r-- 1 root root  1926084 Jun 30 10:31 python2-debug-2.7.18-1.se.05.p03.ky10.aarch64.rpm
+-rw-r--r-- 1 root root  5153252 Jun 30 10:31 python2-devel-2.7.18-1.se.05.p03.ky10.aarch64.rpm
+-rw-r--r-- 1 root root    13536 Jun 30 10:31 python2-help-2.7.18-1.se.05.p03.ky10.noarch.rpm
+-rw-r--r-- 1 root root   527052 Jun 30 10:31 python2-setuptools-44.1.1-3.p01.ky10.noarch.rpm
+-rw-r--r-- 1 root root   344092 Jun 30 10:31 python2-tkinter-2.7.18-1.se.05.p03.ky10.aarch64.rpm
+-rw-r--r-- 1 root root    14500 Jun 30 10:31 python2-tools-2.7.18-1.se.05.p03.ky10.aarch64.rpm
+-rw-r--r-- 1 root root    22692 Jun 30 10:31 python3-rpm-generators-9-1.ky10.noarch.rpm
+-rw-r--r-- 1 root root     7968 Jun 30 10:31 qt5-srpm-macros-5.14.2-1.ky10.noarch.rpm
+drwxr-xr-x 2 root root     4096 Jun 30 10:32 repodata
+-rw-r--r-- 1 root root    25288 Jun 23 14:22 sshpass-1.06-8.ky10.aarch64.rpm
+-rw-r--r-- 1 root root   787480 Jun 23 14:22 tar-1.32-4.ky10.aarch64.rpm
+-rw-r--r-- 1 root root  1111544 Jun 30 10:31 tk-8.6.10-2.ky10.aarch64.rpm
+-rw-r--r-- 1 root root   138796 Jun 23 14:22 unzip-6.0-47.ky10.aarch64.rpm
+-rw-r--r-- 1 root root  8021212 Jun 23 14:22 vim-common-9.0-19.p09.ky10.aarch64.rpm
+-rw-r--r-- 1 root root  1656496 Jun 23 14:22 vim-enhanced-9.0-19.p09.ky10.aarch64.rpm
+-rw-r--r-- 1 root root    23256 Jun 23 14:22 vim-filesystem-9.0-19.p09.ky10.noarch.rpm
+-rw-r--r-- 1 root root   648108 Jun 23 14:22 wget-1.20.3-6.ky10.aarch64.rpm
+-rw-r--r-- 1 root root   225892 Jun 23 14:22 zip-3.0-26.p01.ky10.aarch64.rpm
+[root@localhost Packages]#</code></pre>
+
+<h3 id="下载-miniserve-作为文件服务器，做yum源服务"><a href="#下载-miniserve-作为文件服务器，做yum源服务" class="headerlink" title="下载 miniserve 作为文件服务器，做yum源服务"></a>下载 <code>miniserve</code> 作为文件服务器，做yum源服务</h3><p><a target="_blank" rel="noopener" href="https://github.com/svenstaro/miniserve/releases">miniserve</a></p>
+<h3 id="配置-service"><a href="#配置-service" class="headerlink" title="配置 service"></a>配置 <code>service</code></h3><pre><code class="highlight bash"><span class="built_in">cat</span> &gt; /etc/systemd/system/yum_repo.service &lt;&lt; <span class="string">&#x27;EOF&#x27;</span>
+[Unit]
+Description=yum_repo
+After=network.target
+
+[Service]
+Environment=<span class="string">&quot;RUST_LOG=info&quot;</span>
+Type=simple
+User=root
+ExecStart=/usr/local/bin/miniserve /dubhe/yum/yum.repo -v -F --hide-theme-selector --route-prefix /base -p 18080
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+
+systemctl <span class="built_in">enable</span> --now yum_repo</code></pre>
+
+<h3 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h3><pre><code class="highlight bash"><span class="built_in">cat</span> &gt; /etc/yum.repos.d/dubhe.repo &lt;&lt; <span class="string">&#x27;EOF&#x27;</span>
+[dubhe]
+name=dubhe
+baseurl = http://10.193.34.4:18080/base/<span class="variable">$basearch</span>/Packages/
+enabled=1
+gpgcheck=0
+EOF</code></pre>
+
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><pre><code class="highlight bash">[root@localhost deploy]# yum  clean all
+0 files removed
+[root@localhost deploy]# yum install vim
+dubhe                                                                                                                                                                                                       21 MB/s |  66 kB     00:00    
+Dependencies resolved.
+===========================================================================================================================================================================================================================================
+ Package                                                     Architecture                                         Version                                                         Repository                                          Size
+===========================================================================================================================================================================================================================================
+Installing:
+ vim-enhanced                                                aarch64                                              2:9.0-19.p09.ky10                                               dubhe                                              1.6 M
+Installing dependencies:
+ gpm-libs                                                    aarch64                                              1.20.7-23.ky10                                                  dubhe                                               18 k
+ vim-common                                                  aarch64                                              2:9.0-19.p09.ky10                                               dubhe                                              7.6 M
+ vim-filesystem                                              noarch                                               2:9.0-19.p09.ky10                                               dubhe                                               23 k
+
+Transaction Summary
+===========================================================================================================================================================================================================================================
+Install  4 Packages
+
+Total download size: 9.3 M
+Installed size: 38 M
+Is this ok [y/N]: 
+</code></pre></main>
+
+</article>
+
+
+<script src="/js/highlight.js"></script>
+
+  </main>
+  <footer class="footer">
+  
+  <span>Copyright © 2025 莫问天涯</span>
+  
+</footer>
+  
+<script src="/js/theme.js"></script>
+
+</body>
+
+</html>

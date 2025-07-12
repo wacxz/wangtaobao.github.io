@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+  <title>
+    
+    使用chromedriver打印日志 丨
+    
+
+    莫问天涯
+  </title>
+
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+  <link id="theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.css">
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+  
+
+  <!-- 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/root.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/post.css">
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="莫问天涯" type="application/atom+xml">
+</head>
+
+<body>
+  <header class="header">
+  <section class="header-container">
+    <a class="logo" href="/">莫问天涯</a>
+    <ul class="nav">
+      
+      <li><a href="/about">about</a></li>
+      
+    </ul>
+  </section>
+</header>
+  <main class="main">
+    <article class="post">
+  
+  <div class="post-title">使用chromedriver打印日志</div>
+  <div class="post-meta">
+    <div class="date">2021 八月 13日</div>
+    <div class="tags">
+      
+      <div class="tag-item">chrome</div>
+      
+      <div class="tag-item">笔记</div>
+      
+      <div class="tag-item">爬虫</div>
+      
+      <div class="tag-item">信息采集</div>
+      
+    </div>
+  </div>
+  
+
+  <main class="post-content"><h1 id="使用chromedriver打印日志"><a href="#使用chromedriver打印日志" class="headerlink" title="使用chromedriver打印日志"></a>使用chromedriver打印日志</h1><h3 id="打印日志，并获取响应状态码"><a href="#打印日志，并获取响应状态码" class="headerlink" title="打印日志，并获取响应状态码"></a>打印日志，并获取响应状态码</h3><pre><code class="highlight java"><span class="keyword">package</span> com.wzq.gbif;
+
+<span class="keyword">import</span> java.util.Iterator;
+<span class="keyword">import</span> java.util.logging.Level;
+
+<span class="keyword">import</span> org.json.JSONException;
+<span class="keyword">import</span> org.json.JSONObject;
+<span class="keyword">import</span> org.openqa.selenium.chrome.ChromeDriver;
+<span class="keyword">import</span> org.openqa.selenium.chrome.ChromeOptions;
+<span class="keyword">import</span> org.openqa.selenium.logging.LogEntries;
+<span class="keyword">import</span> org.openqa.selenium.logging.LogEntry;
+<span class="keyword">import</span> org.openqa.selenium.logging.LogType;
+<span class="keyword">import</span> org.openqa.selenium.logging.LoggingPreferences;
+<span class="keyword">import</span> org.openqa.selenium.remote.DesiredCapabilities;
+
+<span class="comment">/**</span>
+<span class="comment"> * <span class="doctag">@author</span> wang</span>
+<span class="comment"> * <span class="doctag">@version</span> 1.0</span>
+<span class="comment"> * <span class="doctag">@date</span> 2021/8/13 16:50</span>
+<span class="comment"> */</span>
+<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test03</span> &#123;
+
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;
+        downloadPage(<span class="string">&quot;https://www.baidu.com/&quot;</span>);
+    &#125;
+
+    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">downloadPage</span><span class="params">(String url)</span> &#123;
+        <span class="type">ChromeDriver</span> <span class="variable">driver</span> <span class="operator">=</span> <span class="literal">null</span>;
+        <span class="keyword">try</span> &#123;
+            <span class="type">ChromeOptions</span> <span class="variable">options</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ChromeOptions</span>();
+
+            <span class="type">DesiredCapabilities</span> <span class="variable">cap</span> <span class="operator">=</span> DesiredCapabilities.chrome();
+            cap.setCapability(ChromeOptions.CAPABILITY, options);
+            <span class="type">LoggingPreferences</span> <span class="variable">logPrefs</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">LoggingPreferences</span>();
+            logPrefs.enable(LogType.PERFORMANCE, Level.ALL);
+            options.setCapability(<span class="string">&quot;goog:loggingPrefs&quot;</span>, logPrefs);
+            driver = <span class="keyword">new</span> <span class="title class_">ChromeDriver</span>(options);
+            <span class="comment">// navigate to the page</span>
+            System.out.println(<span class="string">&quot;Navigate to &quot;</span> + url);
+            driver.navigate().to(url);
+            <span class="comment">// and capture the last recorded url (it may be a redirect, or the</span>
+            <span class="comment">// original url)</span>
+            <span class="type">String</span> <span class="variable">currentURL</span> <span class="operator">=</span> driver.getCurrentUrl();
+            <span class="type">LogEntries</span> <span class="variable">logs</span> <span class="operator">=</span> driver.manage().logs().get(<span class="string">&quot;performance&quot;</span>);
+            <span class="type">int</span> <span class="variable">status</span> <span class="operator">=</span> -<span class="number">1</span>;
+            System.out.println(<span class="string">&quot;\\nList of log entries:\\n&quot;</span>);
+            <span class="keyword">for</span> (Iterator&lt;LogEntry&gt; it = logs.iterator(); it.hasNext(); ) &#123;
+                <span class="type">LogEntry</span> <span class="variable">entry</span> <span class="operator">=</span> it.next();
+                <span class="keyword">try</span> &#123;
+                    <span class="type">JSONObject</span> <span class="variable">json</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JSONObject</span>(entry.getMessage());
+                    System.out.println(json.toString());
+                    <span class="type">JSONObject</span> <span class="variable">message</span> <span class="operator">=</span> json.getJSONObject(<span class="string">&quot;message&quot;</span>);
+                    <span class="type">String</span> <span class="variable">method</span> <span class="operator">=</span> message.getString(<span class="string">&quot;method&quot;</span>);
+                    <span class="keyword">if</span> (method != <span class="literal">null</span> &amp;&amp; <span class="string">&quot;Network.responseReceived&quot;</span>.equals(method)) &#123;
+                        <span class="type">JSONObject</span> <span class="variable">params</span> <span class="operator">=</span> message.getJSONObject(<span class="string">&quot;params&quot;</span>);
+                        <span class="type">JSONObject</span> <span class="variable">response</span> <span class="operator">=</span> params.getJSONObject(<span class="string">&quot;response&quot;</span>);
+                        <span class="type">String</span> <span class="variable">messageUrl</span> <span class="operator">=</span> response.getString(<span class="string">&quot;url&quot;</span>);
+                        <span class="keyword">if</span> (currentURL.equals(messageUrl)) &#123;
+                            status = response.getInt(<span class="string">&quot;status&quot;</span>);
+                            System.out.println(messageUrl + <span class="string">&quot;: &quot;</span> + status);
+                            System.out.println(<span class="string">&quot;headers: &quot;</span> + response.get(<span class="string">&quot;headers&quot;</span>));
+                        &#125;
+                    &#125;
+                &#125; <span class="keyword">catch</span> (JSONException e) &#123;
+                    <span class="comment">// TODO Auto-generated catch block</span>
+                    e.printStackTrace();
+                &#125;
+            &#125;
+            System.out.println(<span class="string">&quot;\nstatus code: &quot;</span> + status);
+        &#125; <span class="keyword">finally</span> &#123;
+            <span class="keyword">if</span> (driver != <span class="literal">null</span>) &#123;
+                driver.quit();
+            &#125;
+        &#125;
+    &#125;
+
+&#125;
+</code></pre>
+
+<h3 id="打印日志信息"><a href="#打印日志信息" class="headerlink" title="打印日志信息"></a>打印日志信息</h3><pre><code class="highlight shell">Navigate to https://www.baidu.com/
+\nList of log entries:\n
+&#123;&quot;webview&quot;:&quot;4093F206401AE297E4EFF7BEE9AC3FD7&quot;,&quot;message&quot;:&#123;&quot;method&quot;:&quot;Network.requestWillBeSent&quot;,&quot;params&quot;:&#123;&quot;request&quot;:&#123;&quot;headers&quot;:
+https://www.baidu.com/: 200
+headers: &#123;&quot;Transfer-Encoding&quot;:&quot;chunked&quot;,&quot;Server&quot;:&quot;BWS\/1.1&quot;,&quot;X-Ua-Compatible&quot;:&quot;IE=Edge,chrome=1&quot;,&quot;Connection&quot;:&quot;keep-alive&quot;,&quot;P3p&quot;:&quot;CP=\&quot; OTI DSP COR IVA OUR IND COM \&quot;\nCP=\&quot; OTI DSP COR IVA OUR IND COM \&quot;&quot;,&quot;Date&quot;:&quot;Fri, 13 Aug 2021 08:59:41 GMT&quot;,&quot;X-Frame-Options&quot;:&quot;sameorigin&quot;,&quot;Strict-Transport-Security&quot;:&quot;max-age=172800&quot;,&quot;Cache-Control&quot;:&quot;private&quot;,&quot;Bdpagetype&quot;:&quot;1&quot;,&quot;Content-Encoding&quot;:&quot;gzip&quot;,&quot;Traceid&quot;:&quot;162884518124046397549622976489859333826&quot;,&quot;Set-Cookie&quot;:&quot;BAIDUID=F1C5FC92CC8A0F4C4BCC90CD65D5F92D:FG=1; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\nBIDUPSID=F1C5FC92CC8A0F4C4BCC90CD65D5F92D; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\nPSTM=1628845181; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=\/; domain=.baidu.com\nBAIDUID=F1C5FC92CC8A0F4C11A03438D50332A3:FG=1; max-age=31536000; expires=Sat, 13-Aug-22 08:59:41 GMT; domain=.baidu.com; path=\/; version=1; comment=bd\nBDSVRTM=0; path=\/\nBD_HOME=1; path=\/\nH_PS_PSSID=34334_34369_31660_34404_34004_34092_34106_34111_26350_34422_22158_34390; path=\/; domain=.baidu.com&quot;,&quot;Bdqid&quot;:&quot;0x858bae2200003ec2&quot;,&quot;Expires&quot;:&quot;Fri, 13 Aug 2021 08:59:20 GMT&quot;,&quot;Content-Type&quot;:&quot;text\/html;charset=utf-8&quot;&#125;
+…………
+status code: 200</code></pre></main>
+
+</article>
+
+
+<script src="/js/highlight.js"></script>
+
+  </main>
+  <footer class="footer">
+  
+  <span>Copyright © 2025 莫问天涯</span>
+  
+</footer>
+  
+<script src="/js/theme.js"></script>
+
+</body>
+
+</html>

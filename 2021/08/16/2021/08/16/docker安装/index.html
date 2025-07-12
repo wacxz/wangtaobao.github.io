@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+  <title>
+    
+    docker安装 丨
+    
+
+    莫问天涯
+  </title>
+
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+  <link id="theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.css">
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+  
+
+  <!-- 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/root.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/post.css">
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="莫问天涯" type="application/atom+xml">
+</head>
+
+<body>
+  <header class="header">
+  <section class="header-container">
+    <a class="logo" href="/">莫问天涯</a>
+    <ul class="nav">
+      
+      <li><a href="/about">about</a></li>
+      
+    </ul>
+  </section>
+</header>
+  <main class="main">
+    <article class="post">
+  
+  <div class="post-title">docker安装</div>
+  <div class="post-meta">
+    <div class="date">2021 八月 16日</div>
+    <div class="tags">
+      
+      <div class="tag-item">笔记</div>
+      
+      <div class="tag-item">docker</div>
+      
+    </div>
+  </div>
+  
+
+  <main class="post-content"><h1 id="centos7安装docker"><a href="#centos7安装docker" class="headerlink" title="centos7安装docker"></a>centos7安装docker</h1><pre><code class="highlight shell"><span class="meta prompt_">#</span><span class="language-bash">卸载系统之前的docker</span> 
+sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+                  
+sudo yum install -y yum-utils
+<span class="meta prompt_"></span>
+<span class="meta prompt_"># </span><span class="language-bash">配置镜像</span>
+sudo yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+<span class="meta prompt_"></span>
+<span class="meta prompt_">#</span><span class="language-bash">安装docker</span>    
+sudo yum install docker-ce docker-ce-cli containerd.io
+<span class="meta prompt_"></span>
+<span class="meta prompt_">#</span><span class="language-bash">启动docker服务</span>
+sudo systemctl start docker 
+<span class="meta prompt_"></span>
+<span class="meta prompt_">#</span><span class="language-bash">查看版本，是否安装成功</span>
+docker -v
+<span class="meta prompt_"></span>
+<span class="meta prompt_">#</span><span class="language-bash">配置镜像加速</span>
+sudo mkdir -p /etc/docker
+
+sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;
+&#123;
+  &quot;registry-mirrors&quot;: [&quot;https://g2i6jdnj.mirror.aliyuncs.com&quot;]
+&#125;
+EOF
+<span class="meta prompt_"></span>
+<span class="meta prompt_">#</span><span class="language-bash">重启服务</span>
+sudo systemctl daemon-reload
+sudo systemctl restart docker</code></pre></main>
+
+</article>
+
+
+<script src="/js/highlight.js"></script>
+
+  </main>
+  <footer class="footer">
+  
+  <span>Copyright © 2025 莫问天涯</span>
+  
+</footer>
+  
+<script src="/js/theme.js"></script>
+
+</body>
+
+</html>

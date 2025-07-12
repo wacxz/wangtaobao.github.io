@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+  <title>
+    
+    centos做代理中转 丨
+    
+
+    莫问天涯
+  </title>
+
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+  <link id="theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.css">
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+  
+
+  <!-- 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/root.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/post.css">
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="莫问天涯" type="application/atom+xml">
+</head>
+
+<body>
+  <header class="header">
+  <section class="header-container">
+    <a class="logo" href="/">莫问天涯</a>
+    <ul class="nav">
+      
+      <li><a href="/about">about</a></li>
+      
+    </ul>
+  </section>
+</header>
+  <main class="main">
+    <article class="post">
+  
+  <div class="post-title">centos做代理中转</div>
+  <div class="post-meta">
+    <div class="date">2021 八月 18日</div>
+    <div class="tags">
+      
+      <div class="tag-item">代理</div>
+      
+      <div class="tag-item">代理转发</div>
+      
+      <div class="tag-item">centos</div>
+      
+    </div>
+  </div>
+  
+
+  <main class="post-content"><h1 id="centos做代理中转"><a href="#centos做代理中转" class="headerlink" title="centos做代理中转"></a>centos做代理中转</h1><p>使用 <a target="_blank" rel="noopener" href="https://github.com/nadoo/glider">glider</a> 做代理中转，可以把有账号密码的代理转为没有账号密码的代理</p>
+<blockquote>
+<p>glider 是一个支持多种协议的转发代理，也是一个具有 ipset 管理功能（如 dnsmasq）的 dns&#x2F;dhcp 服务器 <br>我们可以将本地侦听器设置为代理服务器，并通过转发器将请求转发到互联网。</p>
+</blockquote>
+<pre><code class="highlight shell">             |Forwarder -----------------&gt;|
+Listener --&gt; |                            | Internet
+             |Forwarder --&gt; Forwarder-&gt;...|
+</code></pre>
+<p>解压直接使用，并对外暴露服务端口</p>
+<pre><code class="highlight shell"><span class="meta prompt_">#</span><span class="language-bash">运行程序</span>
+[root@node4 glider_0.13.2_linux_amd64]# ./glider -forward http://账号:密码@http-dyn.abuyun.com:9020   --listen :11000 -verbose
+2021/04/27 09:27:44 group.go:182: [group] only 1 forwarder found, disable health checking
+2021/04/27 09:27:44 mixed.go:68: [mixed] listening TCP on :8081
+2021/04/27 09:27:44 server.go:105: [socks5] listening UDP on :8081
+<span class="meta prompt_"></span>
+<span class="meta prompt_">#</span><span class="language-bash">应用请求结果：</span>
+
+2021/04/27 09:31:47 server.go:162: [http] 172.110.110.1:26447 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:9020
+2021/04/27 09:31:48 server.go:162: [http] 172.110.110.1:26448 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:9020
+2021/04/27 09:31:49 server.go:162: [http] 172.110.110.1:26459 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:9020
+2021/04/27 09:31:49 server.go:162: [http] 172.110.110.1:26460 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:9020
+2021/04/27 09:31:50 server.go:162: [http] 172.110.110.1:26465 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:9020
+2021/04/27 09:31:51 server.go:162: [http] 172.110.110.1:26466 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:9020
+2021/04/27 09:33:32 server.go:162: [http] 172.110.110.1:26574 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:9020
+2021/04/27 09:33:34 server.go:162: [http] 172.110.110.1:26579 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:9020
+2021/04/27 09:33:35 server.go:162: [http] 172.110.110.1:26582 &lt;-&gt; ip.3322.net:80 via http-dyn.abuyun.com:9020</code></pre></main>
+
+</article>
+
+
+<script src="/js/highlight.js"></script>
+
+  </main>
+  <footer class="footer">
+  
+  <span>Copyright © 2025 莫问天涯</span>
+  
+</footer>
+  
+<script src="/js/theme.js"></script>
+
+</body>
+
+</html>

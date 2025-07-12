@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+  <title>
+    
+
+    莫问天涯
+  </title>
+
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+
+  <!-- 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/root.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/post.css">
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="莫问天涯" type="application/atom+xml">
+</head>
+
+<body>
+  <header class="header">
+  <section class="header-container">
+    <a class="logo" href="/">莫问天涯</a>
+    <ul class="nav">
+      
+      <li><a href="/about">about</a></li>
+      
+    </ul>
+  </section>
+</header>
+  <main class="main">
+    <div class="post-list">
+  
+  <section class="post-item">
+    <a class="post-item-title" href="/2025/07/03/2025/07/03/%E5%88%B6%E4%BD%9C-ky10-aarch64-%E7%A6%BB%E7%BA%BFyum%E6%BA%90/">制作 ky10.aarch64 离线yum源</a>
+<!--    <div class="post-item-summary">-->
+<!--      制作 ky10.aarch64 离线yum源找一台可以联网的机器缓存需要的包文件yumdownloader --resolve  --destdir=./ lsof tar zip unzip jq sshpass chrony psmisc vim curl wget docker openssh-clients python2
+
+下载元数据工具yum install createrepo -y
+
+创建元数据createrepo -o . -v .
+
+
+[root@loca-->
+<!--      <a class="read-more" href="/2025/07/03/2025/07/03/%E5%88%B6%E4%BD%9C-ky10-aarch64-%E7%A6%BB%E7%BA%BFyum%E6%BA%90/"> ... </a>-->
+<!--    </div>-->
+    <div class="post-item-extra">
+      <div class="date">2025.07.03</div>
+      <div class="tags">
+        
+      </div>
+    </div>
+  </section>
+  
+  <section class="post-item">
+    <a class="post-item-title" href="/2021/08/18/2021/08/18/centos%E5%81%9A%E4%BB%A3%E7%90%86%E4%B8%AD%E8%BD%AC/">centos做代理中转</a>
+<!--    <div class="post-item-summary">-->
+<!--      centos做代理中转使用 glider 做代理中转，可以把有账号密码的代理转为没有账号密码的代理
+
+glider 是一个支持多种协议的转发代理，也是一个具有 ipset 管理功能（如 dnsmasq）的 dns&#x2F;dhcp 服务器 我们可以将本地侦听器设置为代理服务器，并通过转发器将请求转发到互联网。
+
+             |Forwarder -----------------&gt;|
+Listener --&gt; |                  -->
+<!--      <a class="read-more" href="/2021/08/18/2021/08/18/centos%E5%81%9A%E4%BB%A3%E7%90%86%E4%B8%AD%E8%BD%AC/"> ... </a>-->
+<!--    </div>-->
+    <div class="post-item-extra">
+      <div class="date">2021.08.18</div>
+      <div class="tags">
+        
+        <div class="tag-item">代理</div>
+        
+        <div class="tag-item">代理转发</div>
+        
+        <div class="tag-item">centos</div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <section class="post-item">
+    <a class="post-item-title" href="/2021/08/18/2021/08/18/centos%E6%96%AD%E7%BD%91%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85chrome/">centos断网环境下安装chrome</a>
+<!--    <div class="post-item-summary">-->
+<!--      centos断网环境下安装chrome离线缓存所有依赖包修改yum设置，让rpm包缓存到本地#修改yum设置，让rpm包缓存到本地
+vi /etc/yum.conf
+
+#修改keepcache为1
+keepcache=1
+
+#清空yum缓存
+yum clean all
+安装chrome#写入源
+vi /etc/yum.repos.d/google-chrome.repo
+
+[google-chrome]
+name=google-chrome
+baseurl=http://dl-->
+<!--      <a class="read-more" href="/2021/08/18/2021/08/18/centos%E6%96%AD%E7%BD%91%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85chrome/"> ... </a>-->
+<!--    </div>-->
+    <div class="post-item-extra">
+      <div class="date">2021.08.18</div>
+      <div class="tags">
+        
+        <div class="tag-item">chrome</div>
+        
+        <div class="tag-item">笔记</div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <section class="post-item">
+    <a class="post-item-title" href="/2021/08/16/2021/08/16/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%95%B4%E7%90%86/">常用正则表达式整理</a>
+<!--    <div class="post-item-summary">-->
+<!--      常用正则表达式整理提取中文[\u4E00-\u9FFF]+
+
+常用正则表达式一、校验数字的表达式
+数字：^[0-9]*$
+n位的数字：^\d&#123;n&#125;$
+至少n位的数字：^\d&#123;n,&#125;$
+m-n位的数字：^\d&#123;m,n&#125;$
+零和非零开头的数字：^(0|[1-9][0-9]*)$
+非零开头的最多带两位小数的数字：^([1-9][0-9]*)+(\.[0-9]&#123;1,2&#125;)?$
+带1-2位小数的正数或负数：-->
+<!--      <a class="read-more" href="/2021/08/16/2021/08/16/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%95%B4%E7%90%86/"> ... </a>-->
+<!--    </div>-->
+    <div class="post-item-extra">
+      <div class="date">2021.08.16</div>
+      <div class="tags">
+        
+        <div class="tag-item">笔记</div>
+        
+        <div class="tag-item">正则表达式</div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <section class="post-item">
+    <a class="post-item-title" href="/2021/08/16/2021/08/16/docker%E5%AE%89%E8%A3%85postgres/">docker安装postgres</a>
+<!--    <div class="post-item-summary">-->
+<!--      docker安装postgres#拉取镜像
+docker pull postgres
+
+#启动
+docker run --name some-postgres -e POSTGRES_PASSWORD=123456 -p 5432:5432 -d postgres-->
+<!--      <a class="read-more" href="/2021/08/16/2021/08/16/docker%E5%AE%89%E8%A3%85postgres/"> ... </a>-->
+<!--    </div>-->
+    <div class="post-item-extra">
+      <div class="date">2021.08.16</div>
+      <div class="tags">
+        
+        <div class="tag-item">笔记</div>
+        
+        <div class="tag-item">docker</div>
+        
+        <div class="tag-item">postgres</div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <section class="post-item">
+    <a class="post-item-title" href="/2021/08/16/2021/08/16/docker%E5%AE%89%E8%A3%85zookeeper/">docker安装zookeeper</a>
+<!--    <div class="post-item-summary">-->
+<!--      docker安装zookeeper#拉取镜像
+docker pull zookeeper
+
+#创建挂载文件夹
+mkdir -p /opt/zook
+
+#启动容器
+docker run -d -v /opt/zook:/data -v /opt/zook:/datalog  -e ZOO_MY_ID=1 -e ZOO_SERVERS=&#x27;server.1=172.110.110.101:2888:3888&#x27;  --net=host --name zookeep-->
+<!--      <a class="read-more" href="/2021/08/16/2021/08/16/docker%E5%AE%89%E8%A3%85zookeeper/"> ... </a>-->
+<!--    </div>-->
+    <div class="post-item-extra">
+      <div class="date">2021.08.16</div>
+      <div class="tags">
+        
+        <div class="tag-item">笔记</div>
+        
+        <div class="tag-item">docker</div>
+        
+        <div class="tag-item">zookeeper</div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <section class="post-item">
+    <a class="post-item-title" href="/2021/08/16/2021/08/16/docker%E5%AE%89%E8%A3%85mysql/">docker安装mysql</a>
+<!--    <div class="post-item-summary">-->
+<!--      docker安装mysql#拉取镜像
+docker pull mysql:5.7
+
+# --name指定容器名字 -v目录挂载 -p指定端口映射  -e设置mysql参数 -d后台运行 -m限制内存使用
+docker run -p 3306:3306 --name mysql \
+-v /mydata/mysql/log:/var/log/mysql \
+-v /mydata/mysql/data:/var/lib/mysql \
+-v /mydata/mysql/conf:-->
+<!--      <a class="read-more" href="/2021/08/16/2021/08/16/docker%E5%AE%89%E8%A3%85mysql/"> ... </a>-->
+<!--    </div>-->
+    <div class="post-item-extra">
+      <div class="date">2021.08.16</div>
+      <div class="tags">
+        
+        <div class="tag-item">笔记</div>
+        
+        <div class="tag-item">docker</div>
+        
+        <div class="tag-item">mysql</div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <section class="post-item">
+    <a class="post-item-title" href="/2021/08/16/2021/08/16/docker%E5%AE%89%E8%A3%85/">docker安装</a>
+<!--    <div class="post-item-summary">-->
+<!--      centos7安装docker#卸载系统之前的docker 
+sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate-->
+<!--      <a class="read-more" href="/2021/08/16/2021/08/16/docker%E5%AE%89%E8%A3%85/"> ... </a>-->
+<!--    </div>-->
+    <div class="post-item-extra">
+      <div class="date">2021.08.16</div>
+      <div class="tags">
+        
+        <div class="tag-item">笔记</div>
+        
+        <div class="tag-item">docker</div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <section class="post-item">
+    <a class="post-item-title" href="/2021/08/16/2021/08/16/postman%E6%89%93%E5%BC%80%E6%97%B6%E7%9E%AC%E9%97%B4%E9%BB%91%E5%B1%8F1s/">postman打开时瞬间黑屏1s</a>
+<!--    <div class="post-item-summary">-->
+<!--      postman打开时瞬间黑屏1s解决方案
+在环境变量中加入POSTMAN_DISABLE_GPU &#x3D; true
+
+重新打开postman
+
+
+
+
+-->
+<!--      <a class="read-more" href="/2021/08/16/2021/08/16/postman%E6%89%93%E5%BC%80%E6%97%B6%E7%9E%AC%E9%97%B4%E9%BB%91%E5%B1%8F1s/"> ... </a>-->
+<!--    </div>-->
+    <div class="post-item-extra">
+      <div class="date">2021.08.16</div>
+      <div class="tags">
+        
+        <div class="tag-item">笔记</div>
+        
+        <div class="tag-item">解决方案</div>
+        
+        <div class="tag-item">postman</div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <section class="post-item">
+    <a class="post-item-title" href="/2021/08/13/2021/08/13/%E6%8E%A8%E9%80%81%E5%8D%9A%E5%AE%A2%E6%97%B6%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">推送博客时出现错误解决方案</a>
+<!--    <div class="post-item-summary">-->
+<!--      Failed to connect to github.com port 443: Timed out在推送博客时出现错误如下：Failed to connect to github.com port 443: Timed outFailed to connect to github.com port 443: Timed out
+
+解决办法，执行如下命令（一般是挂代理引起的）
+git config --global --unset http.proxy
+
+再次推送
+Open-->
+<!--      <a class="read-more" href="/2021/08/13/2021/08/13/%E6%8E%A8%E9%80%81%E5%8D%9A%E5%AE%A2%E6%97%B6%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"> ... </a>-->
+<!--    </div>-->
+    <div class="post-item-extra">
+      <div class="date">2021.08.13</div>
+      <div class="tags">
+        
+        <div class="tag-item">笔记</div>
+        
+        <div class="tag-item">解决方案</div>
+        
+      </div>
+    </div>
+  </section>
+  
+</div>
+
+
+<div class="paginator">
+  <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&gt;</a>
+</div>
+
+  </main>
+  <footer class="footer">
+  
+  <span>Copyright © 2025 莫问天涯</span>
+  
+</footer>
+  
+<script src="/js/theme.js"></script>
+
+</body>
+
+</html>
