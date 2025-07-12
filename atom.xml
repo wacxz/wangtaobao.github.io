@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2025-07-03T09:03:31.268Z</updated>
+  <updated>2025-07-12T03:30:49.613Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,9 +17,29 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Apache Iceberg 、StarRocks</title>
+    <link href="http://example.com/2025/07/12/Apache-Iceberg-%E3%80%81StarRocks/"/>
+    <id>http://example.com/2025/07/12/Apache-Iceberg-%E3%80%81StarRocks/</id>
+    <published>2025-07-12T03:29:52.000Z</published>
+    <updated>2025-07-12T03:30:49.613Z</updated>
+    
+    <content type="html"><![CDATA[<p>Apache Iceberg 和 StarRocks 是大数据领域中不同定位的技术工具，前者是<strong>开源表格式（Table Format）</strong>，后者是<strong>高性能 OLAP 数据库</strong>，两者的设计目标、核心功能和适用场景有显著差异。以下从多个维度详细对比：</p><h3 id="一、核心定位与设计目标"><a href="#一、核心定位与设计目标" class="headerlink" title="一、核心定位与设计目标"></a><strong>一、核心定位与设计目标</strong></h3><table><thead><tr><th>维度</th><th>Apache Iceberg</th><th>StarRocks</th></tr></thead><tbody><tr><td><strong>核心定位</strong></td><td>开源表格式（Table Format），专注于<strong>数据湖中的大规模数据集管理</strong></td><td>分布式 OLAP 数据库，专注于<strong>高性能实时分析与交互式查询</strong></td></tr><tr><td><strong>设计目标</strong></td><td>解决数据湖中的一致性、元数据膨胀、Schema 演化、分区变更等管理难题，实现“数据湖表”的规范化管理</td><td>提供低延迟、高吞吐的分析能力，支持实时数据导入与复杂查询，满足业务决策、报表等场景需求</td></tr><tr><td><strong>本质属性</strong></td><td>不存储数据，也不负责计算，而是定义数据的组织方式（元数据、文件结构等），依赖外部存储和计算引擎</td><td>集成存储与计算的“一体化”数据库，自带存储引擎和计算引擎，端到端支持数据导入、存储、查询</td></tr></tbody></table><h3 id="二、核心功能与技术特性"><a href="#二、核心功能与技术特性" class="headerlink" title="二、核心功能与技术特性"></a><strong>二、核心功能与技术特性</strong></h3><h4 id="1-数据管理能力"><a href="#1-数据管理能力" class="headerlink" title="1. 数据管理能力"></a>1. <strong>数据管理能力</strong></h4><ul><li><p><strong>Apache Iceberg</strong>：<br>核心功能围绕“表的生命周期管理”展开，重点解决数据湖的痛点：</p><ul><li><strong>元数据分层管理</strong>：通过 Table Metadata、Snapshot、Manifest 三级结构管理元数据，避免依赖 Hive Metastore 等外部服务的瓶颈。</li><li><strong>强一致性与隔离性</strong>：支持表级快照（Snapshot）和原子操作，确保读写隔离，避免中间状态对查询的影响。</li><li><strong>Schema 与分区演化</strong>：允许动态修改表结构（添加&#x2F;删除字段、重命名）和分区策略（如从按天分区改为按小时），旧数据无需重写。</li><li><strong>时间旅行（Time Travel）</strong>：支持查询历史快照数据，方便数据回滚、审计或历史对比分析。</li></ul></li><li><p><strong>StarRocks</strong>：<br>核心功能围绕“高性能分析”展开，重点优化查询效率和实时性：</p><ul><li><strong>向量执行引擎</strong>：采用向量化执行技术，将批量数据按列处理，减少函数调用开销，提升 CPU 利用率。</li><li><strong>CBO 优化器</strong>：基于代价的查询优化器，能自动选择最优执行计划（如Join顺序、索引使用等），优化复杂查询性能。</li><li><strong>实时数据导入</strong>：支持 Kafka 实时流导入（毫秒级延迟）、Batch 批量导入（如从 HDFS、S3 加载），以及 MySQL 等数据库的同步。</li><li><strong>物化视图</strong>：预计算并存储查询结果，加速重复查询（如报表统计），支持自动刷新（实时&#x2F;定时）。</li></ul></li></ul><h3 id="三、技术架构"><a href="#三、技术架构" class="headerlink" title="三、技术架构"></a><strong>三、技术架构</strong></h3><h4 id="1-Apache-Iceberg-架构"><a href="#1-Apache-Iceberg-架构" class="headerlink" title="1. Apache Iceberg 架构"></a>1. <strong>Apache Iceberg 架构</strong></h4><ul><li><strong>分层元数据架构</strong>：<ul><li><strong>表元数据（Table Metadata）</strong>：存储表的基本信息（Schema、分区策略、当前快照 ID 等）。</li><li><strong>快照（Snapshot）</strong>：记录某一时刻的数据集版本，包含 Manifest 列表。</li><li><strong>Manifest</strong>：记录数据文件的元信息（路径、分区值、统计信息等）。</li><li><strong>数据文件</strong>：实际存储数据（支持 Parquet、ORC、Avro 等格式）。</li></ul></li><li><strong>存储与计算解耦</strong>：<ul><li>数据和元数据存储在分布式存储（如 HDFS、S3、OSS），不依赖本地磁盘。</li><li>计算依赖外部引擎（如 Spark、Flink、Trino 等），自身不提供计算能力。</li></ul></li></ul><h4 id="2-StarRocks-架构"><a href="#2-StarRocks-架构" class="headerlink" title="2. StarRocks 架构"></a>2. <strong>StarRocks 架构</strong></h4><ul><li><strong>Shared-Nothing 分布式架构</strong>：<ul><li><strong>FE（Frontend）</strong>：负责元数据管理、SQL 解析与优化、集群调度。</li><li><strong>BE（Backend）</strong>：负责数据存储、计算执行（如查询、导入），每个 BE 节点独立管理本地数据。</li><li><strong>CN（Compute Node，可选）</strong>：独立的计算节点，用于扩展计算能力（与 BE 分离，避免存储影响计算）。</li></ul></li><li><strong>存储与计算紧密结合</strong>：<ul><li>数据默认存储在 BE 节点的本地磁盘（支持 SSD&#x2F;HDD），也可扩展至对象存储（如 S3）作为冷热分层存储。</li><li>计算引擎内置（向量执行、CBO 等），无需依赖外部工具。</li></ul></li></ul><h3 id="三、适用场景"><a href="#三、适用场景" class="headerlink" title="三、适用场景"></a><strong>三、适用场景</strong></h3><table><thead><tr><th>场景类型</th><th>Apache Iceberg 适用场景</th><th>StarRocks 适用场景</th></tr></thead><tbody><tr><td><strong>数据规模与类型</strong></td><td>超大规模（PB 级甚至 EB 级）、非结构化&#x2F;半结构化&#x2F;结构化数据，需长期存储的历史数据</td><td>中大规模（TB 到 PB 级）、以结构化数据为主，需高频查询的业务数据</td></tr><tr><td><strong>核心需求</strong></td><td>数据湖构建、数据版本控制、Schema&#x2F;分区动态变更、跨引擎共享数据</td><td>实时分析（如监控大屏）、交互式查询（如业务报表）、高并发查询（如用户行为分析）</td></tr><tr><td><strong>典型场景</strong></td><td>- 企业级数据湖的标准化管理<br>- 机器学习训练数据的版本控制<br>- 跨团队共享海量历史数据</td><td>- 实时业务监控（如电商订单实时分析）<br>- 用户画像与行为分析<br>- 自助式 BI 报表查询</td></tr><tr><td><strong>不适用场景</strong></td><td>低延迟交互式查询、实时分析（需依赖计算引擎，本身无计算能力）</td><td>超大规模数据湖管理、Schema 频繁变更且需跨引擎共享（设计上更侧重“库内”分析）</td></tr></tbody></table><h3 id="四、集成生态"><a href="#四、集成生态" class="headerlink" title="四、集成生态"></a><strong>四、集成生态</strong></h3><ul><li><p><strong>Apache Iceberg</strong>：<br>依赖外部工具，生态以“表格式”为核心兼容各类引擎：</p><ul><li><strong>存储</strong>：HDFS、S3、GCS、OSS 等对象存储&#x2F;分布式文件系统。</li><li><strong>计算引擎</strong>：Spark（批处理）、Flink（流处理）、Trino&#x2F;Presto（查询）、Hive 等。</li><li><strong>数据格式</strong>：支持 Parquet、ORC、Avro 等列存格式。</li></ul></li><li><p><strong>StarRocks</strong>：<br>以“数据库”为核心，生态更侧重“端到端分析链路”：</p><ul><li><strong>数据源</strong>：支持从 Kafka（实时）、MySQL（CDC）、HDFS（批处理）、S3 等导入数据。</li><li><strong>查询接口</strong>：兼容 MySQL 协议，可直接通过 SQL 客户端、BI 工具（Tableau、Power BI）访问。</li><li><strong>集成工具</strong>：Flink（实时写入）、Spark（批量导入）、Airflow（调度）等。</li></ul></li></ul><h3 id="五、总结：核心差异与互补性"><a href="#五、总结：核心差异与互补性" class="headerlink" title="五、总结：核心差异与互补性"></a><strong>五、总结：核心差异与互补性</strong></h3><ul><li><strong>核心差异</strong>：Iceberg 是“数据湖的表管理工具”，解决“数据怎么存、怎么管”；StarRocks 是“OLAP 数据库”，解决“数据怎么查、怎么分析快”。</li><li><strong>互补性</strong>：实际业务中两者可结合使用——用 Iceberg 管理数据湖中的海量历史数据，通过 ETL 将需高频分析的数据同步到 StarRocks，利用 StarRocks 的高性能完成实时查询与报表生成。</li></ul><p>简言之，选择 Iceberg 还是 StarRocks，取决于需求是“管理大规模数据湖”还是“快速分析业务数据”。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Apache Iceberg 和 StarRocks 是大数据领域中不同定位的技术工具，前者是&lt;strong&gt;开源表格式（Table Format）&lt;/strong&gt;，后者是&lt;strong&gt;高性能 OLAP 数据库&lt;/strong&gt;，两者的设计目标、核心功能和适用场景有显著</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>制作 ky10.aarch64 离线yum源</title>
-    <link href="http://example.com/2025/07/03/2025/07/03/%E5%88%B6%E4%BD%9C-ky10-aarch64-%E7%A6%BB%E7%BA%BFyum%E6%BA%90/"/>
-    <id>http://example.com/2025/07/03/2025/07/03/%E5%88%B6%E4%BD%9C-ky10-aarch64-%E7%A6%BB%E7%BA%BFyum%E6%BA%90/</id>
+    <link href="http://example.com/2025/07/03/%E5%88%B6%E4%BD%9C-ky10-aarch64-%E7%A6%BB%E7%BA%BFyum%E6%BA%90/"/>
+    <id>http://example.com/2025/07/03/%E5%88%B6%E4%BD%9C-ky10-aarch64-%E7%A6%BB%E7%BA%BFyum%E6%BA%90/</id>
     <published>2025-07-03T09:02:56.000Z</published>
     <updated>2025-07-03T09:03:31.268Z</updated>
     
@@ -38,8 +58,8 @@
   
   <entry>
     <title>centos做代理中转</title>
-    <link href="http://example.com/2021/08/18/2021/08/18/centos%E5%81%9A%E4%BB%A3%E7%90%86%E4%B8%AD%E8%BD%AC/"/>
-    <id>http://example.com/2021/08/18/2021/08/18/centos%E5%81%9A%E4%BB%A3%E7%90%86%E4%B8%AD%E8%BD%AC/</id>
+    <link href="http://example.com/2021/08/18/18/centos%E5%81%9A%E4%BB%A3%E7%90%86%E4%B8%AD%E8%BD%AC/"/>
+    <id>http://example.com/2021/08/18/18/centos%E5%81%9A%E4%BB%A3%E7%90%86%E4%B8%AD%E8%BD%AC/</id>
     <published>2021-08-18T10:18:15.000Z</published>
     <updated>2021-08-18T10:25:40.000Z</updated>
     
@@ -64,8 +84,8 @@
   
   <entry>
     <title>centos断网环境下安装chrome</title>
-    <link href="http://example.com/2021/08/18/2021/08/18/centos%E6%96%AD%E7%BD%91%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85chrome/"/>
-    <id>http://example.com/2021/08/18/2021/08/18/centos%E6%96%AD%E7%BD%91%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85chrome/</id>
+    <link href="http://example.com/2021/08/18/18/centos%E6%96%AD%E7%BD%91%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85chrome/"/>
+    <id>http://example.com/2021/08/18/18/centos%E6%96%AD%E7%BD%91%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85chrome/</id>
     <published>2021-08-18T02:02:35.000Z</published>
     <updated>2021-08-18T10:07:26.000Z</updated>
     
@@ -88,8 +108,8 @@
   
   <entry>
     <title>常用正则表达式整理</title>
-    <link href="http://example.com/2021/08/16/2021/08/16/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%95%B4%E7%90%86/"/>
-    <id>http://example.com/2021/08/16/2021/08/16/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%95%B4%E7%90%86/</id>
+    <link href="http://example.com/2021/08/16/16/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%95%B4%E7%90%86/"/>
+    <id>http://example.com/2021/08/16/16/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%95%B4%E7%90%86/</id>
     <published>2021-08-16T09:31:07.000Z</published>
     <updated>2021-08-16T09:40:22.000Z</updated>
     
@@ -112,8 +132,8 @@
   
   <entry>
     <title>docker安装postgres</title>
-    <link href="http://example.com/2021/08/16/2021/08/16/docker%E5%AE%89%E8%A3%85postgres/"/>
-    <id>http://example.com/2021/08/16/2021/08/16/docker%E5%AE%89%E8%A3%85postgres/</id>
+    <link href="http://example.com/2021/08/16/16/docker%E5%AE%89%E8%A3%85postgres/"/>
+    <id>http://example.com/2021/08/16/16/docker%E5%AE%89%E8%A3%85postgres/</id>
     <published>2021-08-16T07:41:38.000Z</published>
     <updated>2021-08-16T07:50:02.000Z</updated>
     
@@ -138,8 +158,8 @@
   
   <entry>
     <title>docker安装zookeeper</title>
-    <link href="http://example.com/2021/08/16/2021/08/16/docker%E5%AE%89%E8%A3%85zookeeper/"/>
-    <id>http://example.com/2021/08/16/2021/08/16/docker%E5%AE%89%E8%A3%85zookeeper/</id>
+    <link href="http://example.com/2021/08/16/16/docker%E5%AE%89%E8%A3%85zookeeper/"/>
+    <id>http://example.com/2021/08/16/16/docker%E5%AE%89%E8%A3%85zookeeper/</id>
     <published>2021-08-16T05:33:50.000Z</published>
     <updated>2021-08-16T05:42:14.000Z</updated>
     
@@ -164,8 +184,8 @@
   
   <entry>
     <title>docker安装mysql</title>
-    <link href="http://example.com/2021/08/16/2021/08/16/docker%E5%AE%89%E8%A3%85mysql/"/>
-    <id>http://example.com/2021/08/16/2021/08/16/docker%E5%AE%89%E8%A3%85mysql/</id>
+    <link href="http://example.com/2021/08/16/16/docker%E5%AE%89%E8%A3%85mysql/"/>
+    <id>http://example.com/2021/08/16/16/docker%E5%AE%89%E8%A3%85mysql/</id>
     <published>2021-08-16T05:23:16.000Z</published>
     <updated>2021-08-16T05:29:52.000Z</updated>
     
@@ -190,8 +210,8 @@
   
   <entry>
     <title>docker安装</title>
-    <link href="http://example.com/2021/08/16/2021/08/16/docker%E5%AE%89%E8%A3%85/"/>
-    <id>http://example.com/2021/08/16/2021/08/16/docker%E5%AE%89%E8%A3%85/</id>
+    <link href="http://example.com/2021/08/16/16/docker%E5%AE%89%E8%A3%85/"/>
+    <id>http://example.com/2021/08/16/16/docker%E5%AE%89%E8%A3%85/</id>
     <published>2021-08-16T05:11:42.000Z</published>
     <updated>2021-08-16T05:29:52.000Z</updated>
     
@@ -214,8 +234,8 @@
   
   <entry>
     <title>postman打开时瞬间黑屏1s</title>
-    <link href="http://example.com/2021/08/16/2021/08/16/postman%E6%89%93%E5%BC%80%E6%97%B6%E7%9E%AC%E9%97%B4%E9%BB%91%E5%B1%8F1s/"/>
-    <id>http://example.com/2021/08/16/2021/08/16/postman%E6%89%93%E5%BC%80%E6%97%B6%E7%9E%AC%E9%97%B4%E9%BB%91%E5%B1%8F1s/</id>
+    <link href="http://example.com/2021/08/16/16/postman%E6%89%93%E5%BC%80%E6%97%B6%E7%9E%AC%E9%97%B4%E9%BB%91%E5%B1%8F1s/"/>
+    <id>http://example.com/2021/08/16/16/postman%E6%89%93%E5%BC%80%E6%97%B6%E7%9E%AC%E9%97%B4%E9%BB%91%E5%B1%8F1s/</id>
     <published>2021-08-16T04:25:06.000Z</published>
     <updated>2021-08-16T04:38:04.000Z</updated>
     
@@ -240,8 +260,8 @@
   
   <entry>
     <title>推送博客时出现错误解决方案</title>
-    <link href="http://example.com/2021/08/13/2021/08/13/%E6%8E%A8%E9%80%81%E5%8D%9A%E5%AE%A2%E6%97%B6%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>http://example.com/2021/08/13/2021/08/13/%E6%8E%A8%E9%80%81%E5%8D%9A%E5%AE%A2%E6%97%B6%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
+    <link href="http://example.com/2021/08/13/13/%E6%8E%A8%E9%80%81%E5%8D%9A%E5%AE%A2%E6%97%B6%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>http://example.com/2021/08/13/13/%E6%8E%A8%E9%80%81%E5%8D%9A%E5%AE%A2%E6%97%B6%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
     <published>2021-08-13T09:20:47.000Z</published>
     <updated>2021-08-16T04:26:44.000Z</updated>
     
@@ -264,8 +284,8 @@
   
   <entry>
     <title>使用chromedriver打印日志</title>
-    <link href="http://example.com/2021/08/13/2021/08/13/%E4%BD%BF%E7%94%A8chromedriver%E6%89%93%E5%8D%B0%E6%97%A5%E5%BF%97/"/>
-    <id>http://example.com/2021/08/13/2021/08/13/%E4%BD%BF%E7%94%A8chromedriver%E6%89%93%E5%8D%B0%E6%97%A5%E5%BF%97/</id>
+    <link href="http://example.com/2021/08/13/13/%E4%BD%BF%E7%94%A8chromedriver%E6%89%93%E5%8D%B0%E6%97%A5%E5%BF%97/"/>
+    <id>http://example.com/2021/08/13/13/%E4%BD%BF%E7%94%A8chromedriver%E6%89%93%E5%8D%B0%E6%97%A5%E5%BF%97/</id>
     <published>2021-08-13T08:36:00.000Z</published>
     <updated>2021-08-18T02:03:56.000Z</updated>
     
