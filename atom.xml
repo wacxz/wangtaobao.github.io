@@ -3,11 +3,11 @@
   <title>莫问天涯</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://101723.xyz/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://101723.xyz/"/>
   <updated>2025-07-15T07:29:21.071Z</updated>
-  <id>http://example.com/</id>
+  <id>https://101723.xyz/</id>
   
   <author>
     <name>莫问天涯</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>mysql_binlog无法开启的问题排查</title>
-    <link href="http://example.com/2025/07/15/mysql-binlog%E6%97%A0%E6%B3%95%E5%BC%80%E5%90%AF%E7%9A%84%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/"/>
-    <id>http://example.com/2025/07/15/mysql-binlog%E6%97%A0%E6%B3%95%E5%BC%80%E5%90%AF%E7%9A%84%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/</id>
+    <link href="https://101723.xyz/2025/07/15/mysql-binlog%E6%97%A0%E6%B3%95%E5%BC%80%E5%90%AF%E7%9A%84%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/"/>
+    <id>https://101723.xyz/2025/07/15/mysql-binlog%E6%97%A0%E6%B3%95%E5%BC%80%E5%90%AF%E7%9A%84%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/</id>
     <published>2025-07-15T07:27:54.000Z</published>
     <updated>2025-07-15T07:29:21.071Z</updated>
     
@@ -38,8 +38,8 @@
   
   <entry>
     <title>Apache Iceberg 、StarRocks</title>
-    <link href="http://example.com/2025/07/12/Apache-Iceberg-%E3%80%81StarRocks/"/>
-    <id>http://example.com/2025/07/12/Apache-Iceberg-%E3%80%81StarRocks/</id>
+    <link href="https://101723.xyz/2025/07/12/Apache-Iceberg-%E3%80%81StarRocks/"/>
+    <id>https://101723.xyz/2025/07/12/Apache-Iceberg-%E3%80%81StarRocks/</id>
     <published>2025-07-12T03:29:52.000Z</published>
     <updated>2025-07-12T03:30:49.613Z</updated>
     
@@ -58,8 +58,8 @@
   
   <entry>
     <title>制作 ky10.aarch64 离线yum源</title>
-    <link href="http://example.com/2025/07/03/%E5%88%B6%E4%BD%9C-ky10-aarch64-%E7%A6%BB%E7%BA%BFyum%E6%BA%90/"/>
-    <id>http://example.com/2025/07/03/%E5%88%B6%E4%BD%9C-ky10-aarch64-%E7%A6%BB%E7%BA%BFyum%E6%BA%90/</id>
+    <link href="https://101723.xyz/2025/07/03/%E5%88%B6%E4%BD%9C-ky10-aarch64-%E7%A6%BB%E7%BA%BFyum%E6%BA%90/"/>
+    <id>https://101723.xyz/2025/07/03/%E5%88%B6%E4%BD%9C-ky10-aarch64-%E7%A6%BB%E7%BA%BFyum%E6%BA%90/</id>
     <published>2025-07-03T09:02:56.000Z</published>
     <updated>2025-07-03T09:03:31.268Z</updated>
     
@@ -78,8 +78,8 @@
   
   <entry>
     <title>centos做代理中转</title>
-    <link href="http://example.com/2021/08/18/18/centos%E5%81%9A%E4%BB%A3%E7%90%86%E4%B8%AD%E8%BD%AC/"/>
-    <id>http://example.com/2021/08/18/18/centos%E5%81%9A%E4%BB%A3%E7%90%86%E4%B8%AD%E8%BD%AC/</id>
+    <link href="https://101723.xyz/2021/08/18/18/centos%E5%81%9A%E4%BB%A3%E7%90%86%E4%B8%AD%E8%BD%AC/"/>
+    <id>https://101723.xyz/2021/08/18/18/centos%E5%81%9A%E4%BB%A3%E7%90%86%E4%B8%AD%E8%BD%AC/</id>
     <published>2021-08-18T10:18:15.000Z</published>
     <updated>2021-08-18T10:25:40.000Z</updated>
     
@@ -94,22 +94,22 @@
     
     
     
-    <category term="代理" scheme="http://example.com/tags/%E4%BB%A3%E7%90%86/"/>
+    <category term="代理" scheme="https://101723.xyz/tags/%E4%BB%A3%E7%90%86/"/>
     
-    <category term="代理转发" scheme="http://example.com/tags/%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91/"/>
+    <category term="代理转发" scheme="https://101723.xyz/tags/%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91/"/>
     
-    <category term="centos" scheme="http://example.com/tags/centos/"/>
+    <category term="centos" scheme="https://101723.xyz/tags/centos/"/>
     
   </entry>
   
   <entry>
     <title>centos断网环境下安装chrome</title>
-    <link href="http://example.com/2021/08/18/18/centos%E6%96%AD%E7%BD%91%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85chrome/"/>
-    <id>http://example.com/2021/08/18/18/centos%E6%96%AD%E7%BD%91%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85chrome/</id>
+    <link href="https://101723.xyz/2021/08/18/18/centos%E6%96%AD%E7%BD%91%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85chrome/"/>
+    <id>https://101723.xyz/2021/08/18/18/centos%E6%96%AD%E7%BD%91%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85chrome/</id>
     <published>2021-08-18T02:02:35.000Z</published>
     <updated>2021-08-18T10:07:26.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="centos断网环境下安装chrome"><a href="#centos断网环境下安装chrome" class="headerlink" title="centos断网环境下安装chrome"></a>centos断网环境下安装chrome</h1><h2 id="离线缓存所有依赖包"><a href="#离线缓存所有依赖包" class="headerlink" title="离线缓存所有依赖包"></a>离线缓存所有依赖包</h2><h3 id="修改yum设置，让rpm包缓存到本地"><a href="#修改yum设置，让rpm包缓存到本地" class="headerlink" title="修改yum设置，让rpm包缓存到本地"></a>修改yum设置，让rpm包缓存到本地</h3><pre><code class="highlight shell"><span class="meta prompt_">#</span><span class="language-bash">修改yum设置，让rpm包缓存到本地</span>vi /etc/yum.conf<span class="meta prompt_"></span><span class="meta prompt_">#</span><span class="language-bash">修改keepcache为1</span>keepcache=1<span class="meta prompt_"></span><span class="meta prompt_">#</span><span class="language-bash">清空yum缓存</span>yum clean all</code></pre><h3 id="安装chrome"><a href="#安装chrome" class="headerlink" title="安装chrome"></a>安装chrome</h3><pre><code class="highlight shell"><span class="meta prompt_">#</span><span class="language-bash">写入源</span>vi /etc/yum.repos.d/google-chrome.repo[google-chrome]name=google-chromebaseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64enabled=1gpgcheck=1gpgkey=https://dl.google.com/linux/linux_signing_key.pub<span class="meta prompt_"></span><span class="meta prompt_"></span><span class="meta prompt_">#</span><span class="language-bash">安装</span>yum -y install google-chrome-stable --nogpgcheck</code></pre><p><img src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/18/ddf921379399625b9342863230cbbc.png" alt="安装成功提示"></p><h3 id="复制缓存的依赖包"><a href="#复制缓存的依赖包" class="headerlink" title="复制缓存的依赖包"></a>复制缓存的依赖包</h3><p><img src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/18/ac230e5be8d7a22f150ddb98704e9c.png" alt="缓存依赖包位置"><br><img src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/18/511b04931124416801a69743c48562.png" alt="全部打包"><br><a href="https://github.com/wanghubcc/file01/releases/download/google-chrome-92/google-chrome-all.zip">打包好的centos7_chrome_v92</a></p><h2 id="把所有的依赖包上传至断网机器"><a href="#把所有的依赖包上传至断网机器" class="headerlink" title="把所有的依赖包上传至断网机器"></a>把所有的依赖包上传至断网机器</h2><h3 id="切换到依赖包目录下"><a href="#切换到依赖包目录下" class="headerlink" title="切换到依赖包目录下"></a>切换到依赖包目录下</h3><pre><code class="highlight shell"><span class="meta prompt_">#</span><span class="language-bash">强制安装所有依赖</span>rpm -ivh *.rpm --nodeps --force</code></pre><p>联网的机器安装成功，这里就没问题</p><pre><code class="highlight shell"><span class="meta prompt_">#</span><span class="language-bash">验证</span>[root@node4 packages]# google-chrome -versionGoogle Chrome 92.0.4515.131 [root@node4 packages]#</code></pre>]]></content>
+    <content type="html"><![CDATA[<h1 id="centos断网环境下安装chrome"><a href="#centos断网环境下安装chrome" class="headerlink" title="centos断网环境下安装chrome"></a>centos断网环境下安装chrome</h1><h2 id="离线缓存所有依赖包"><a href="#离线缓存所有依赖包" class="headerlink" title="离线缓存所有依赖包"></a>离线缓存所有依赖包</h2><h3 id="修改yum设置，让rpm包缓存到本地"><a href="#修改yum设置，让rpm包缓存到本地" class="headerlink" title="修改yum设置，让rpm包缓存到本地"></a>修改yum设置，让rpm包缓存到本地</h3><pre><code class="highlight shell"><span class="meta prompt_">#</span><span class="language-bash">修改yum设置，让rpm包缓存到本地</span>vi /etc/yum.conf<span class="meta prompt_"></span><span class="meta prompt_">#</span><span class="language-bash">修改keepcache为1</span>keepcache=1<span class="meta prompt_"></span><span class="meta prompt_">#</span><span class="language-bash">清空yum缓存</span>yum clean all</code></pre><h3 id="安装chrome"><a href="#安装chrome" class="headerlink" title="安装chrome"></a>安装chrome</h3><pre><code class="highlight shell"><span class="meta prompt_">#</span><span class="language-bash">写入源</span>vi /etc/yum.repos.d/google-chrome.repo[google-chrome]name=google-chromebaseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64enabled=1gpgcheck=1gpgkey=https://dl.google.com/linux/linux_signing_key.pub<span class="meta prompt_"></span><span class="meta prompt_"></span><span class="meta prompt_">#</span><span class="language-bash">安装</span>yum -y install google-chrome-stable --nogpgcheck</code></pre><p><a class="simple-lightbox" href="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/18/ddf921379399625b9342863230cbbc.png"><img   src="/images/loading.svg" data-src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/18/ddf921379399625b9342863230cbbc.png"  alt="安装成功提示" lazyload></a></p><h3 id="复制缓存的依赖包"><a href="#复制缓存的依赖包" class="headerlink" title="复制缓存的依赖包"></a>复制缓存的依赖包</h3><p><a class="simple-lightbox" href="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/18/ac230e5be8d7a22f150ddb98704e9c.png"><img   src="/images/loading.svg" data-src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/18/ac230e5be8d7a22f150ddb98704e9c.png"  alt="缓存依赖包位置" lazyload></a><br><a class="simple-lightbox" href="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/18/511b04931124416801a69743c48562.png"><img   src="/images/loading.svg" data-src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/18/511b04931124416801a69743c48562.png"  alt="全部打包" lazyload></a><br><a href="https://github.com/wanghubcc/file01/releases/download/google-chrome-92/google-chrome-all.zip">打包好的centos7_chrome_v92</a></p><h2 id="把所有的依赖包上传至断网机器"><a href="#把所有的依赖包上传至断网机器" class="headerlink" title="把所有的依赖包上传至断网机器"></a>把所有的依赖包上传至断网机器</h2><h3 id="切换到依赖包目录下"><a href="#切换到依赖包目录下" class="headerlink" title="切换到依赖包目录下"></a>切换到依赖包目录下</h3><pre><code class="highlight shell"><span class="meta prompt_">#</span><span class="language-bash">强制安装所有依赖</span>rpm -ivh *.rpm --nodeps --force</code></pre><p>联网的机器安装成功，这里就没问题</p><pre><code class="highlight shell"><span class="meta prompt_">#</span><span class="language-bash">验证</span>[root@node4 packages]# google-chrome -versionGoogle Chrome 92.0.4515.131 [root@node4 packages]#</code></pre>]]></content>
     
     
       
@@ -120,20 +120,20 @@
     
     
     
-    <category term="chrome" scheme="http://example.com/tags/chrome/"/>
+    <category term="chrome" scheme="https://101723.xyz/tags/chrome/"/>
     
-    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://101723.xyz/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>常用正则表达式整理</title>
-    <link href="http://example.com/2021/08/16/16/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%95%B4%E7%90%86/"/>
-    <id>http://example.com/2021/08/16/16/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%95%B4%E7%90%86/</id>
+    <link href="https://101723.xyz/2021/08/16/16/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%95%B4%E7%90%86/"/>
+    <id>https://101723.xyz/2021/08/16/16/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%95%B4%E7%90%86/</id>
     <published>2021-08-16T09:31:07.000Z</published>
     <updated>2021-08-16T09:40:22.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="常用正则表达式整理"><a href="#常用正则表达式整理" class="headerlink" title="常用正则表达式整理"></a>常用正则表达式整理</h1><h3 id="提取中文"><a href="#提取中文" class="headerlink" title="提取中文"></a>提取中文</h3><pre><code class="highlight shell">[\u4E00-\u9FFF]+</code></pre><p><img src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/16/26a290b67a6e4b5c12f16897daf7e2.png" alt="示例"></p><h3 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a>常用正则表达式</h3><pre><code class="highlight text">一、校验数字的表达式数字：^[0-9]*$n位的数字：^\d&#123;n&#125;$至少n位的数字：^\d&#123;n,&#125;$m-n位的数字：^\d&#123;m,n&#125;$零和非零开头的数字：^(0|[1-9][0-9]*)$非零开头的最多带两位小数的数字：^([1-9][0-9]*)+(\.[0-9]&#123;1,2&#125;)?$带1-2位小数的正数或负数：^(\-)?\d+(\.\d&#123;1,2&#125;)$正数、负数、和小数：^(\-|\+)?\d+(\.\d+)?$有两位小数的正实数：^[0-9]+(\.[0-9]&#123;2&#125;)?$有1~3位小数的正实数：^[0-9]+(\.[0-9]&#123;1,3&#125;)?$非零的正整数：^[1-9]\d*$ 或 ^([1-9][0-9]*)&#123;1,3&#125;$ 或 ^\+?[1-9][0-9]*$非零的负整数：^\-[1-9][]0-9&quot;*$ 或 ^-[1-9]\d*$非负整数：^\d+$ 或 ^[1-9]\d*|0$非正整数：^-[1-9]\d*|0$ 或 ^((-\d+)|(0+))$非负浮点数：^\d+(\.\d+)?$ 或 ^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$非正浮点数：^((-\d+(\.\d+)?)|(0+(\.0+)?))$ 或 ^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$正浮点数：^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$ 或 ^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$负浮点数：^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$ 或 ^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$浮点数：^(-?\d+)(\.\d+)?$ 或 ^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$校验字符的表达式汉字：^[\u4e00-\u9fa5]&#123;0,&#125;$英文和数字：^[A-Za-z0-9]+$ 或 ^[A-Za-z0-9]&#123;4,40&#125;$长度为3-20的所有字符：^.&#123;3,20&#125;$由26个英文字母组成的字符串：^[A-Za-z]+$由26个大写英文字母组成的字符串：^[A-Z]+$由26个小写英文字母组成的字符串：^[a-z]+$由数字和26个英文字母组成的字符串：^[A-Za-z0-9]+$由数字、26个英文字母或者下划线组成的字符串：^\w+$ 或 ^\w&#123;3,20&#125;$中文、英文、数字包括下划线：^[\u4E00-\u9FA5A-Za-z0-9_]+$中文、英文、数字但不包括下划线等符号：^[\u4E00-\u9FA5A-Za-z0-9]+$ 或 ^[\u4E00-\u9FA5A-Za-z0-9]&#123;2,20&#125;$可以输入含有^%&amp;&#x27;,;=?$\&quot;等字符：[^%&amp;&#x27;,;=?$\x22]+禁止输入含有~的字符：[^~\x22]+三、特殊需求表达式Email地址：^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$域名：[a-zA-Z0-9][-a-zA-Z0-9]&#123;0,62&#125;(\.[a-zA-Z0-9][-a-zA-Z0-9]&#123;0,62&#125;)+\.?InternetURL：[a-zA-z]+://[^\s]* 或 ^http://([\w-]+\.)+[\w-]+(/[\w-./?%&amp;=]*)?$手机号码：^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d&#123;8&#125;$电话号码(&quot;XXX-XXXXXXX&quot;、&quot;XXXX-XXXXXXXX&quot;、&quot;XXX-XXXXXXX&quot;、&quot;XXX-XXXXXXXX&quot;、&quot;XXXXXXX&quot;和&quot;XXXXXXXX)：^(\(\d&#123;3,4&#125;-)|\d&#123;3.4&#125;-)?\d&#123;7,8&#125;$国内电话号码(0511-4405222、021-87888822)：\d&#123;3&#125;-\d&#123;8&#125;|\d&#123;4&#125;-\d&#123;7&#125;电话号码正则表达式（支持手机号码，3-4位区号，7-8位直播号码，1－4位分机号）: ((\d&#123;11&#125;)|^((\d&#123;7,8&#125;)|(\d&#123;4&#125;|\d&#123;3&#125;)-(\d&#123;7,8&#125;)|(\d&#123;4&#125;|\d&#123;3&#125;)-(\d&#123;7,8&#125;)-(\d&#123;4&#125;|\d&#123;3&#125;|\d&#123;2&#125;|\d&#123;1&#125;)|(\d&#123;7,8&#125;)-(\d&#123;4&#125;|\d&#123;3&#125;|\d&#123;2&#125;|\d&#123;1&#125;))$)身份证号(15位、18位数字)，最后一位是校验位，可能为数字或字符X：(^\d&#123;15&#125;$)|(^\d&#123;18&#125;$)|(^\d&#123;17&#125;(\d|X|x)$)帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]&#123;4,15&#125;$密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：^[a-zA-Z]\w&#123;5,17&#125;$强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在 8-10 之间)：^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]&#123;8,10&#125;$强密码(必须包含大小写字母和数字的组合，可以使用特殊字符，长度在8-10之间)：^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).&#123;8,10&#125;$日期格式：^\d&#123;4&#125;-\d&#123;1,2&#125;-\d&#123;1,2&#125;一年的12个月(01～09和1～12)：^(0?[1-9]|1[0-2])$一个月的31天(01～09和1～31)：^((0?[1-9])|((1|2)[0-9])|30|31)$钱的输入格式：有四种钱的表示形式我们可以接受:&quot;10000.00&quot; 和 &quot;10,000.00&quot;, 和没有 &quot;分&quot; 的 &quot;10000&quot; 和 &quot;10,000&quot;：^[1-9][0-9]*$这表示任意一个不以0开头的数字,但是,这也意味着一个字符&quot;0&quot;不通过,所以我们采用下面的形式：^(0|[1-9][0-9]*)$一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：^(0|-?[1-9][0-9]*)$这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧。下面我们要加的是说明可能的小数部分：^[0-9]+(.[0-9]+)?$必须说明的是,小数点后面至少应该有1位数,所以&quot;10.&quot;是不通过的,但是 &quot;10&quot; 和 &quot;10.2&quot; 是通过的：^[0-9]+(.[0-9]&#123;2&#125;)?$这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：^[0-9]+(.[0-9]&#123;1,2&#125;)?$这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：^[0-9]&#123;1,3&#125;(,[0-9]&#123;3&#125;)*(.[0-9]&#123;1,2&#125;)?$1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：^([0-9]+|[0-9]&#123;1,3&#125;(,[0-9]&#123;3&#125;)*)(.[0-9]&#123;1,2&#125;)?$备注：这就是最终结果了,别忘了&quot;+&quot;可以用&quot;*&quot;替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里xml文件：^([a-zA-Z]+-?)+[a-zA-Z0-9]+\\.[x|X][m|M][l|L]$中文字符的正则表达式：[\u4e00-\u9fa5]双字节字符：[^\x00-\xff] (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))空白行的正则表达式：\n\s*\r (可以用来删除空白行)HTML标记的正则表达式：&lt;(\S*?)[^&gt;]*&gt;.*?|&lt;.*? /&gt; ( 首尾空白字符的正则表达式：^\s*|\s*$或(^\s*)|(\s*$) (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)腾讯QQ号：[1-9][0-9]&#123;4,&#125; (腾讯QQ号从10000开始)中国邮政编码：[1-9]\d&#123;5&#125;(?!\d) (中国邮政编码为6位数字)IPv4地址：((2(5[0-5]|[0-4]\d))|[0-1]?\d&#123;1,2&#125;)(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d&#123;1,2&#125;))&#123;3&#125;</code></pre>]]></content>
+    <content type="html"><![CDATA[<h1 id="常用正则表达式整理"><a href="#常用正则表达式整理" class="headerlink" title="常用正则表达式整理"></a>常用正则表达式整理</h1><h3 id="提取中文"><a href="#提取中文" class="headerlink" title="提取中文"></a>提取中文</h3><pre><code class="highlight shell">[\u4E00-\u9FFF]+</code></pre><p><a class="simple-lightbox" href="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/16/26a290b67a6e4b5c12f16897daf7e2.png"><img   src="/images/loading.svg" data-src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/16/26a290b67a6e4b5c12f16897daf7e2.png"  alt="示例" lazyload></a></p><h3 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a>常用正则表达式</h3><pre><code class="highlight text">一、校验数字的表达式数字：^[0-9]*$n位的数字：^\d&#123;n&#125;$至少n位的数字：^\d&#123;n,&#125;$m-n位的数字：^\d&#123;m,n&#125;$零和非零开头的数字：^(0|[1-9][0-9]*)$非零开头的最多带两位小数的数字：^([1-9][0-9]*)+(\.[0-9]&#123;1,2&#125;)?$带1-2位小数的正数或负数：^(\-)?\d+(\.\d&#123;1,2&#125;)$正数、负数、和小数：^(\-|\+)?\d+(\.\d+)?$有两位小数的正实数：^[0-9]+(\.[0-9]&#123;2&#125;)?$有1~3位小数的正实数：^[0-9]+(\.[0-9]&#123;1,3&#125;)?$非零的正整数：^[1-9]\d*$ 或 ^([1-9][0-9]*)&#123;1,3&#125;$ 或 ^\+?[1-9][0-9]*$非零的负整数：^\-[1-9][]0-9&quot;*$ 或 ^-[1-9]\d*$非负整数：^\d+$ 或 ^[1-9]\d*|0$非正整数：^-[1-9]\d*|0$ 或 ^((-\d+)|(0+))$非负浮点数：^\d+(\.\d+)?$ 或 ^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$非正浮点数：^((-\d+(\.\d+)?)|(0+(\.0+)?))$ 或 ^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$正浮点数：^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$ 或 ^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$负浮点数：^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$ 或 ^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$浮点数：^(-?\d+)(\.\d+)?$ 或 ^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$校验字符的表达式汉字：^[\u4e00-\u9fa5]&#123;0,&#125;$英文和数字：^[A-Za-z0-9]+$ 或 ^[A-Za-z0-9]&#123;4,40&#125;$长度为3-20的所有字符：^.&#123;3,20&#125;$由26个英文字母组成的字符串：^[A-Za-z]+$由26个大写英文字母组成的字符串：^[A-Z]+$由26个小写英文字母组成的字符串：^[a-z]+$由数字和26个英文字母组成的字符串：^[A-Za-z0-9]+$由数字、26个英文字母或者下划线组成的字符串：^\w+$ 或 ^\w&#123;3,20&#125;$中文、英文、数字包括下划线：^[\u4E00-\u9FA5A-Za-z0-9_]+$中文、英文、数字但不包括下划线等符号：^[\u4E00-\u9FA5A-Za-z0-9]+$ 或 ^[\u4E00-\u9FA5A-Za-z0-9]&#123;2,20&#125;$可以输入含有^%&amp;&#x27;,;=?$\&quot;等字符：[^%&amp;&#x27;,;=?$\x22]+禁止输入含有~的字符：[^~\x22]+三、特殊需求表达式Email地址：^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$域名：[a-zA-Z0-9][-a-zA-Z0-9]&#123;0,62&#125;(\.[a-zA-Z0-9][-a-zA-Z0-9]&#123;0,62&#125;)+\.?InternetURL：[a-zA-z]+://[^\s]* 或 ^http://([\w-]+\.)+[\w-]+(/[\w-./?%&amp;=]*)?$手机号码：^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d&#123;8&#125;$电话号码(&quot;XXX-XXXXXXX&quot;、&quot;XXXX-XXXXXXXX&quot;、&quot;XXX-XXXXXXX&quot;、&quot;XXX-XXXXXXXX&quot;、&quot;XXXXXXX&quot;和&quot;XXXXXXXX)：^(\(\d&#123;3,4&#125;-)|\d&#123;3.4&#125;-)?\d&#123;7,8&#125;$国内电话号码(0511-4405222、021-87888822)：\d&#123;3&#125;-\d&#123;8&#125;|\d&#123;4&#125;-\d&#123;7&#125;电话号码正则表达式（支持手机号码，3-4位区号，7-8位直播号码，1－4位分机号）: ((\d&#123;11&#125;)|^((\d&#123;7,8&#125;)|(\d&#123;4&#125;|\d&#123;3&#125;)-(\d&#123;7,8&#125;)|(\d&#123;4&#125;|\d&#123;3&#125;)-(\d&#123;7,8&#125;)-(\d&#123;4&#125;|\d&#123;3&#125;|\d&#123;2&#125;|\d&#123;1&#125;)|(\d&#123;7,8&#125;)-(\d&#123;4&#125;|\d&#123;3&#125;|\d&#123;2&#125;|\d&#123;1&#125;))$)身份证号(15位、18位数字)，最后一位是校验位，可能为数字或字符X：(^\d&#123;15&#125;$)|(^\d&#123;18&#125;$)|(^\d&#123;17&#125;(\d|X|x)$)帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]&#123;4,15&#125;$密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：^[a-zA-Z]\w&#123;5,17&#125;$强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在 8-10 之间)：^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]&#123;8,10&#125;$强密码(必须包含大小写字母和数字的组合，可以使用特殊字符，长度在8-10之间)：^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).&#123;8,10&#125;$日期格式：^\d&#123;4&#125;-\d&#123;1,2&#125;-\d&#123;1,2&#125;一年的12个月(01～09和1～12)：^(0?[1-9]|1[0-2])$一个月的31天(01～09和1～31)：^((0?[1-9])|((1|2)[0-9])|30|31)$钱的输入格式：有四种钱的表示形式我们可以接受:&quot;10000.00&quot; 和 &quot;10,000.00&quot;, 和没有 &quot;分&quot; 的 &quot;10000&quot; 和 &quot;10,000&quot;：^[1-9][0-9]*$这表示任意一个不以0开头的数字,但是,这也意味着一个字符&quot;0&quot;不通过,所以我们采用下面的形式：^(0|[1-9][0-9]*)$一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：^(0|-?[1-9][0-9]*)$这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧。下面我们要加的是说明可能的小数部分：^[0-9]+(.[0-9]+)?$必须说明的是,小数点后面至少应该有1位数,所以&quot;10.&quot;是不通过的,但是 &quot;10&quot; 和 &quot;10.2&quot; 是通过的：^[0-9]+(.[0-9]&#123;2&#125;)?$这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：^[0-9]+(.[0-9]&#123;1,2&#125;)?$这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：^[0-9]&#123;1,3&#125;(,[0-9]&#123;3&#125;)*(.[0-9]&#123;1,2&#125;)?$1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：^([0-9]+|[0-9]&#123;1,3&#125;(,[0-9]&#123;3&#125;)*)(.[0-9]&#123;1,2&#125;)?$备注：这就是最终结果了,别忘了&quot;+&quot;可以用&quot;*&quot;替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里xml文件：^([a-zA-Z]+-?)+[a-zA-Z0-9]+\\.[x|X][m|M][l|L]$中文字符的正则表达式：[\u4e00-\u9fa5]双字节字符：[^\x00-\xff] (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))空白行的正则表达式：\n\s*\r (可以用来删除空白行)HTML标记的正则表达式：&lt;(\S*?)[^&gt;]*&gt;.*?|&lt;.*? /&gt; ( 首尾空白字符的正则表达式：^\s*|\s*$或(^\s*)|(\s*$) (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)腾讯QQ号：[1-9][0-9]&#123;4,&#125; (腾讯QQ号从10000开始)中国邮政编码：[1-9]\d&#123;5&#125;(?!\d) (中国邮政编码为6位数字)IPv4地址：((2(5[0-5]|[0-4]\d))|[0-1]?\d&#123;1,2&#125;)(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d&#123;1,2&#125;))&#123;3&#125;</code></pre>]]></content>
     
     
       
@@ -144,16 +144,16 @@
     
     
     
-    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://101723.xyz/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="正则表达式" scheme="http://example.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <category term="正则表达式" scheme="https://101723.xyz/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>docker安装postgres</title>
-    <link href="http://example.com/2021/08/16/16/docker%E5%AE%89%E8%A3%85postgres/"/>
-    <id>http://example.com/2021/08/16/16/docker%E5%AE%89%E8%A3%85postgres/</id>
+    <link href="https://101723.xyz/2021/08/16/16/docker%E5%AE%89%E8%A3%85postgres/"/>
+    <id>https://101723.xyz/2021/08/16/16/docker%E5%AE%89%E8%A3%85postgres/</id>
     <published>2021-08-16T07:41:38.000Z</published>
     <updated>2021-08-16T07:50:02.000Z</updated>
     
@@ -168,18 +168,18 @@
     
     
     
-    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://101723.xyz/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="docker" scheme="http://example.com/tags/docker/"/>
+    <category term="docker" scheme="https://101723.xyz/tags/docker/"/>
     
-    <category term="postgres" scheme="http://example.com/tags/postgres/"/>
+    <category term="postgres" scheme="https://101723.xyz/tags/postgres/"/>
     
   </entry>
   
   <entry>
     <title>docker安装zookeeper</title>
-    <link href="http://example.com/2021/08/16/16/docker%E5%AE%89%E8%A3%85zookeeper/"/>
-    <id>http://example.com/2021/08/16/16/docker%E5%AE%89%E8%A3%85zookeeper/</id>
+    <link href="https://101723.xyz/2021/08/16/16/docker%E5%AE%89%E8%A3%85zookeeper/"/>
+    <id>https://101723.xyz/2021/08/16/16/docker%E5%AE%89%E8%A3%85zookeeper/</id>
     <published>2021-08-16T05:33:50.000Z</published>
     <updated>2021-08-16T05:42:14.000Z</updated>
     
@@ -194,18 +194,18 @@
     
     
     
-    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://101723.xyz/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="docker" scheme="http://example.com/tags/docker/"/>
+    <category term="docker" scheme="https://101723.xyz/tags/docker/"/>
     
-    <category term="zookeeper" scheme="http://example.com/tags/zookeeper/"/>
+    <category term="zookeeper" scheme="https://101723.xyz/tags/zookeeper/"/>
     
   </entry>
   
   <entry>
     <title>docker安装mysql</title>
-    <link href="http://example.com/2021/08/16/16/docker%E5%AE%89%E8%A3%85mysql/"/>
-    <id>http://example.com/2021/08/16/16/docker%E5%AE%89%E8%A3%85mysql/</id>
+    <link href="https://101723.xyz/2021/08/16/16/docker%E5%AE%89%E8%A3%85mysql/"/>
+    <id>https://101723.xyz/2021/08/16/16/docker%E5%AE%89%E8%A3%85mysql/</id>
     <published>2021-08-16T05:23:16.000Z</published>
     <updated>2021-08-16T05:29:52.000Z</updated>
     
@@ -220,18 +220,18 @@
     
     
     
-    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://101723.xyz/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="docker" scheme="http://example.com/tags/docker/"/>
+    <category term="docker" scheme="https://101723.xyz/tags/docker/"/>
     
-    <category term="mysql" scheme="http://example.com/tags/mysql/"/>
+    <category term="mysql" scheme="https://101723.xyz/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>docker安装</title>
-    <link href="http://example.com/2021/08/16/16/docker%E5%AE%89%E8%A3%85/"/>
-    <id>http://example.com/2021/08/16/16/docker%E5%AE%89%E8%A3%85/</id>
+    <link href="https://101723.xyz/2021/08/16/16/docker%E5%AE%89%E8%A3%85/"/>
+    <id>https://101723.xyz/2021/08/16/16/docker%E5%AE%89%E8%A3%85/</id>
     <published>2021-08-16T05:11:42.000Z</published>
     <updated>2021-08-16T05:29:52.000Z</updated>
     
@@ -246,20 +246,20 @@
     
     
     
-    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://101723.xyz/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="docker" scheme="http://example.com/tags/docker/"/>
+    <category term="docker" scheme="https://101723.xyz/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>postman打开时瞬间黑屏1s</title>
-    <link href="http://example.com/2021/08/16/16/postman%E6%89%93%E5%BC%80%E6%97%B6%E7%9E%AC%E9%97%B4%E9%BB%91%E5%B1%8F1s/"/>
-    <id>http://example.com/2021/08/16/16/postman%E6%89%93%E5%BC%80%E6%97%B6%E7%9E%AC%E9%97%B4%E9%BB%91%E5%B1%8F1s/</id>
+    <link href="https://101723.xyz/2021/08/16/16/postman%E6%89%93%E5%BC%80%E6%97%B6%E7%9E%AC%E9%97%B4%E9%BB%91%E5%B1%8F1s/"/>
+    <id>https://101723.xyz/2021/08/16/16/postman%E6%89%93%E5%BC%80%E6%97%B6%E7%9E%AC%E9%97%B4%E9%BB%91%E5%B1%8F1s/</id>
     <published>2021-08-16T04:25:06.000Z</published>
     <updated>2021-08-16T04:38:04.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="postman打开时瞬间黑屏1s解决方案"><a href="#postman打开时瞬间黑屏1s解决方案" class="headerlink" title="postman打开时瞬间黑屏1s解决方案"></a>postman打开时瞬间黑屏1s解决方案</h1><ul><li><p>在环境变量中加入POSTMAN_DISABLE_GPU &#x3D; true</p></li><li><p>重新打开postman</p></li></ul><p><img src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/16/23df65c69822793fa2750acd40308c.png" alt="在环境变量中加入POSTMAN_DISABLE_GPU &#x3D; true"></p><p><img src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/16/81c7db49cace5ed587ccba20262a9e.png" alt="重新打开postman"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="postman打开时瞬间黑屏1s解决方案"><a href="#postman打开时瞬间黑屏1s解决方案" class="headerlink" title="postman打开时瞬间黑屏1s解决方案"></a>postman打开时瞬间黑屏1s解决方案</h1><ul><li><p>在环境变量中加入POSTMAN_DISABLE_GPU &#x3D; true</p></li><li><p>重新打开postman</p></li></ul><p><a class="simple-lightbox" href="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/16/23df65c69822793fa2750acd40308c.png"><img   src="/images/loading.svg" data-src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/16/23df65c69822793fa2750acd40308c.png"  alt="在环境变量中加入POSTMAN_DISABLE_GPU &#x3D; true" lazyload></a></p><p><a class="simple-lightbox" href="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/16/81c7db49cace5ed587ccba20262a9e.png"><img   src="/images/loading.svg" data-src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/16/81c7db49cace5ed587ccba20262a9e.png"  alt="重新打开postman" lazyload></a></p>]]></content>
     
     
       
@@ -270,18 +270,18 @@
     
     
     
-    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://101723.xyz/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="解决方案" scheme="http://example.com/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <category term="解决方案" scheme="https://101723.xyz/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
-    <category term="postman" scheme="http://example.com/tags/postman/"/>
+    <category term="postman" scheme="https://101723.xyz/tags/postman/"/>
     
   </entry>
   
   <entry>
     <title>推送博客时出现错误解决方案</title>
-    <link href="http://example.com/2021/08/13/13/%E6%8E%A8%E9%80%81%E5%8D%9A%E5%AE%A2%E6%97%B6%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>http://example.com/2021/08/13/13/%E6%8E%A8%E9%80%81%E5%8D%9A%E5%AE%A2%E6%97%B6%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
+    <link href="https://101723.xyz/2021/08/13/13/%E6%8E%A8%E9%80%81%E5%8D%9A%E5%AE%A2%E6%97%B6%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>https://101723.xyz/2021/08/13/13/%E6%8E%A8%E9%80%81%E5%8D%9A%E5%AE%A2%E6%97%B6%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
     <published>2021-08-13T09:20:47.000Z</published>
     <updated>2021-08-16T04:26:44.000Z</updated>
     
@@ -296,16 +296,16 @@
     
     
     
-    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://101723.xyz/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="解决方案" scheme="http://example.com/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <category term="解决方案" scheme="https://101723.xyz/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
   </entry>
   
   <entry>
     <title>使用chromedriver打印日志</title>
-    <link href="http://example.com/2021/08/13/13/%E4%BD%BF%E7%94%A8chromedriver%E6%89%93%E5%8D%B0%E6%97%A5%E5%BF%97/"/>
-    <id>http://example.com/2021/08/13/13/%E4%BD%BF%E7%94%A8chromedriver%E6%89%93%E5%8D%B0%E6%97%A5%E5%BF%97/</id>
+    <link href="https://101723.xyz/2021/08/13/13/%E4%BD%BF%E7%94%A8chromedriver%E6%89%93%E5%8D%B0%E6%97%A5%E5%BF%97/"/>
+    <id>https://101723.xyz/2021/08/13/13/%E4%BD%BF%E7%94%A8chromedriver%E6%89%93%E5%8D%B0%E6%97%A5%E5%BF%97/</id>
     <published>2021-08-13T08:36:00.000Z</published>
     <updated>2021-08-18T02:03:56.000Z</updated>
     
@@ -320,13 +320,13 @@
     
     
     
-    <category term="chrome" scheme="http://example.com/tags/chrome/"/>
+    <category term="chrome" scheme="https://101723.xyz/tags/chrome/"/>
     
-    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://101723.xyz/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="爬虫" scheme="http://example.com/tags/%E7%88%AC%E8%99%AB/"/>
+    <category term="爬虫" scheme="https://101723.xyz/tags/%E7%88%AC%E8%99%AB/"/>
     
-    <category term="信息采集" scheme="http://example.com/tags/%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86/"/>
+    <category term="信息采集" scheme="https://101723.xyz/tags/%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86/"/>
     
   </entry>
   

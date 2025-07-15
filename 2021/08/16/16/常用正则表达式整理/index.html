@@ -1,73 +1,108 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-  <title>
-    
-    常用正则表达式整理 丨
+<html lang="zh-CN">
+  <head>
     
 
-    莫问天涯
-  </title>
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
 
-  
-  <link rel="shortcut icon" href="/favicon.ico">
-  
+<meta charset="utf-8" >
 
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  
-  <link id="theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.css">
-  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
-  
+<title>常用正则表达式整理</title>
+<meta name="keywords" content="常用正则表达式整理, 莫问天涯">
+<meta name="description" content="常用正则表达式整理提取中文[\u4E00-\u9FFF]+
 
-  <!-- 字体 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+常用正则表达式一、校验数字的表达式
+数字：^[0-9]*$
+n位的数字：^\d&#123;n&#125;$
+至少n位的数字：^\d&#123;n,&#125;$
+m-n位的数字：">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="常用正则表达式整理">
+<meta property="og:description" content="常用正则表达式整理提取中文[\u4E00-\u9FFF]+
 
-  
-<link rel="stylesheet" href="/css/root.css">
+常用正则表达式一、校验数字的表达式
+数字：^[0-9]*$
+n位的数字：^\d&#123;n&#125;$
+至少n位的数字：^\d&#123;n,&#125;$
+m-n位的数字：">
 
-  
-<link rel="stylesheet" href="/css/style.css">
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
 
-  
-<link rel="stylesheet" href="/css/post.css">
-
-<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="莫问天涯" type="application/atom+xml">
+  <link rel="stylesheet" href="/style/simple-lightbox.min.css"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="莫问天涯" type="application/atom+xml">
 </head>
+  <body>
+    <div id="app" class="main">
 
-<body>
-  <header class="header">
-  <section class="header-container">
-    <a class="logo" href="/">莫问天涯</a>
-    <ul class="nav">
-      
-      <li><a href="/about">about</a></li>
-      
-    </ul>
-  </section>
-</header>
-  <main class="main">
-    <article class="post">
-  
-  <div class="post-title">常用正则表达式整理</div>
-  <div class="post-meta">
-    <div class="date">2021 八月 16日</div>
-    <div class="tags">
-      
-      <div class="tag-item">笔记</div>
-      
-      <div class="tag-item">正则表达式</div>
-      
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://101723.xyz">
+        <img class="avatar" src="/images/3beafc09-9568-40c1-bcbb-a62d0beeec0f.jpg" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://101723.xyz">
+        <h1 class="site-title">莫问天涯</h1>
+      </a>
     </div>
+<!--    <div class="right">-->
+<!--        <i class="icon menu-switch icon-menu-outline" ></i>-->
+<!--    </div>-->
   </div>
-  
+</div>
 
-  <main class="post-content"><h1 id="常用正则表达式整理"><a href="#常用正则表达式整理" class="headerlink" title="常用正则表达式整理"></a>常用正则表达式整理</h1><h3 id="提取中文"><a href="#提取中文" class="headerlink" title="提取中文"></a>提取中文</h3><pre><code class="highlight shell">[\u4E00-\u9FFF]+</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/16/26a290b67a6e4b5c12f16897daf7e2.png" alt="示例"></p>
+<div class="menu-container" style="height: 0;opacity: 0;">
+<!--<nav class="menu-list">-->
+<!--  -->
+<!--    -->
+<!--      <a href="/" class="menu purple-link">-->
+<!--        首页-->
+<!--      </a>-->
+<!--    -->
+<!--  -->
+<!--    -->
+<!--      <a href="/about" class="menu purple-link">-->
+<!--        关于-->
+<!--      </a>-->
+<!--    -->
+<!--  -->
+<!--</nav>-->
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">常用正则表达式整理</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-08-16</span>
+        
+          <span>
+          <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="/tags/%E7%AC%94%E8%AE%B0/">
+              笔记
+                
+                  ，
+                
+              </a>
+            
+              <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+              正则表达式
+                
+              </a>
+            
+          </span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <h1 id="常用正则表达式整理"><a href="#常用正则表达式整理" class="headerlink" title="常用正则表达式整理"></a>常用正则表达式整理</h1><h3 id="提取中文"><a href="#提取中文" class="headerlink" title="提取中文"></a>提取中文</h3><pre><code class="highlight shell">[\u4E00-\u9FFF]+</code></pre>
+<p><a class="simple-lightbox" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/16/26a290b67a6e4b5c12f16897daf7e2.png"><img   src="/images/loading.svg" data-src="https://cdn.jsdelivr.net/gh/wanghubcc/img/202108/16/26a290b67a6e4b5c12f16897daf7e2.png"  alt="示例" lazyload></a></p>
 <h3 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a>常用正则表达式</h3><pre><code class="highlight text">一、校验数字的表达式
 数字：^[0-9]*$
 n位的数字：^\d&#123;n&#125;$
@@ -134,22 +169,79 @@ xml文件：^([a-zA-Z]+-?)+[a-zA-Z0-9]+\\.[x|X][m|M][l|L]$
 HTML标记的正则表达式：&lt;(\S*?)[^&gt;]*&gt;.*?|&lt;.*? /&gt; ( 首尾空白字符的正则表达式：^\s*|\s*$或(^\s*)|(\s*$) (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)
 腾讯QQ号：[1-9][0-9]&#123;4,&#125; (腾讯QQ号从10000开始)
 中国邮政编码：[1-9]\d&#123;5&#125;(?!\d) (中国邮政编码为6位数字)
-IPv4地址：((2(5[0-5]|[0-4]\d))|[0-1]?\d&#123;1,2&#125;)(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d&#123;1,2&#125;))&#123;3&#125;</code></pre></main>
+IPv4地址：((2(5[0-5]|[0-4]\d))|[0-1]?\d&#123;1,2&#125;)(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d&#123;1,2&#125;))&#123;3&#125;</code></pre>
+        </div>
+          
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%95%B4%E7%90%86"><span class="top-box-text">常用正则表达式整理</span></a><ol class="top-box-child"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E6%8F%90%E5%8F%96%E4%B8%AD%E6%96%87"><span class="top-box-text">提取中文</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="top-box-text">常用正则表达式</span></a></li></ol></li></ol></li></ol>
+        </div>
+          
+      </div>
+    </div>
 
-</article>
+    
+      <div class="next-post">
+        <a class="purple-link" href="/2021/08/16/16/docker%E5%AE%89%E8%A3%85postgres/">
+          <h3 class="post-title">
+            下一篇：docker安装postgres
+          </h3>
+        </a>
+      </div>
+    
+  </div>
 
 
-<script src="/js/highlight.js"></script>
 
-  </main>
-  <footer class="footer">
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
   
-  <span>Copyright © 2025 莫问天涯</span>
+        Copyright © 2025 莫问天涯
   
+  
+  
+  
+  
+  
+</div>
 </footer>
-  
-<script src="/js/theme.js"></script>
 
-</body>
 
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  <script src="/js/simple-lightbox.min.js"></script><script>document.addEventListener('DOMContentLoaded', function() {new SimpleLightbox('.post-detail .simple-lightbox', {fileExt: false,captionsData:'alt'});});</script></body>
 </html>
+
