@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+  <title>
+    
+    mysql_binlog无法开启的问题排查 丨
+    
+
+    莫问天涯
+  </title>
+
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+  <link id="theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.css">
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+  
+
+  <!-- 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/root.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/post.css">
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="莫问天涯" type="application/atom+xml">
+</head>
+
+<body>
+  <header class="header">
+  <section class="header-container">
+    <a class="logo" href="/">莫问天涯</a>
+    <ul class="nav">
+      
+      <li><a href="/about">about</a></li>
+      
+    </ul>
+  </section>
+</header>
+  <main class="main">
+    <article class="post">
+  
+  <div class="post-title">mysql_binlog无法开启的问题排查</div>
+  <div class="post-meta">
+    <div class="date">2025 七月 15日</div>
+    <div class="tags">
+      
+    </div>
+  </div>
+  
+
+  <main class="post-content"><h2 id="查询-binglog状态"><a href="#查询-binglog状态" class="headerlink" title="查询 binglog状态"></a>查询 binglog状态</h2><pre><code class="highlight bash">root@ubuntu:~# docker run --<span class="built_in">rm</span> -it mysql:latest mysql -u<span class="string">&#x27;root&#x27;</span> -p<span class="string">&#x27;qwe1qaz&#x27;</span> -P 3306 -h10.193.34.24
+mysql: [Warning] Using a password on the <span class="built_in">command</span> line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection <span class="built_in">id</span> is 2
+Server version: 5.7.34 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type <span class="string">&#x27;help;&#x27;</span> or <span class="string">&#x27;\h&#x27;</span> <span class="keyword">for</span> <span class="built_in">help</span>. Type <span class="string">&#x27;\c&#x27;</span> to clear the current input statement.
+
+mysql&gt; SHOW VARIABLES LIKE <span class="string">&#x27;log_bin&#x27;</span>;
++---------------+-------+
+| Variable_name | Value |
++---------------+-------+
+| log_bin       | OFF   |
++---------------+-------+
+1 row <span class="keyword">in</span> <span class="built_in">set</span> (0.028 sec)</code></pre>
+
+<h2 id="更改mysql配置文件无效-mysql启动方式为docker"><a href="#更改mysql配置文件无效-mysql启动方式为docker" class="headerlink" title="更改mysql配置文件无效, mysql启动方式为docker"></a>更改mysql配置文件无效, mysql启动方式为docker</h2><h2 id="查询启动加载的配置文件"><a href="#查询启动加载的配置文件" class="headerlink" title="查询启动加载的配置文件"></a>查询启动加载的配置文件</h2><pre><code class="highlight bash">mysql&gt; SHOW VARIABLES LIKE <span class="string">&#x27;config_file&#x27;</span>;
+Empty <span class="built_in">set</span> (0.029 sec)
+
+mysql&gt;</code></pre>
+
+<pre><code class="highlight bash"><span class="comment"># 查看 MySQL 配置文件搜索顺序</span>
+root@e4e4d16e78f6:/# mysql --<span class="built_in">help</span> | grep <span class="string">&quot;Default options&quot;</span> -A 1
+Default options are <span class="built_in">read</span> from the following files <span class="keyword">in</span> the given order:
+/etc/my.cnf /etc/mysql/my.cnf ~/.my.cnf
+root@e4e4d16e78f6:/#
+
+<span class="comment"># /etc/my.cnf /etc/mysql/my.cnf ~/.my.cnf 三个配置文件都没加载进来</span>
+
+<span class="built_in">echo</span> <span class="string">&#x27;&#x27;</span><span class="string">&#x27;[mysqld]</span>
+<span class="string">log-bin = /var/lib/mysql/mysql-bin</span>
+<span class="string">server-id = 1</span>
+<span class="string">expire-logs-days = 10</span>
+<span class="string">max-binlog-size = 100M</span>
+<span class="string">binlog-format = ROW</span>
+<span class="string">&#x27;</span><span class="string">&#x27;&#x27;</span> &gt;&gt; /etc/mysql/my.cnf
+
+<span class="comment"># 重启容器</span></code></pre>
+
+<p>end</p>
+</main>
+
+</article>
+
+
+<script src="/js/highlight.js"></script>
+
+  </main>
+  <footer class="footer">
+  
+  <span>Copyright © 2025 莫问天涯</span>
+  
+</footer>
+  
+<script src="/js/theme.js"></script>
+
+</body>
+
+</html>
